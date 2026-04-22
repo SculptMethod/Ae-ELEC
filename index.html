@@ -8,6 +8,27 @@
 <meta name="robots" content="index, follow" />
 <meta name="author" content="AE ELEC" />
 <meta name="theme-color" content="#0b4f9c" />
+<meta name="keywords" content="électricien Biguglia, électricien Bastia, électricité Corse, dépannage électrique Corse, borne recharge Corse, climatisation Corse, domotique Corse, alarme Corse" />
+
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Electrician",
+"name": "AE ELEC",
+"image": "./images/logo.jpeg",
+"address": {
+"@type": "PostalAddress",
+"streetAddress": "ZI de Tragone",
+"addressLocality": "Biguglia",
+"postalCode": "20620",
+"addressCountry": "FR"
+},
+"telephone": "+33699441977",
+"areaServed": "Corse",
+"priceRange": "€€"
+}
+</script>
+
 <style>
 :root{
 --blue:#0b4f9c;
@@ -141,6 +162,15 @@ border:1px solid var(--line);
 .btn-light:hover{
 transform:translateY(-2px);
 box-shadow:var(--shadow);
+}
+
+.top-strip{
+background:#0b4f9c;
+color:#fff;
+text-align:center;
+padding:10px 14px;
+font-size:14px;
+font-weight:700;
 }
 
 .topbar{
@@ -571,6 +601,19 @@ padding:10px;
 border-radius:16px;
 }
 
+.whatsapp-float{
+position:fixed;
+bottom:90px;
+right:20px;
+background:#25D366;
+color:#fff;
+padding:14px 18px;
+border-radius:999px;
+font-weight:700;
+box-shadow:0 10px 25px rgba(0,0,0,.2);
+z-index:1000;
+}
+
 .mobile-bar{
 position:fixed;
 left:0;
@@ -784,6 +827,10 @@ width:100%;
 width:100%;
 }
 
+.whatsapp-float{
+display:none;
+}
+
 .mobile-bar{
 display:flex;
 padding:10px 12px calc(10px + env(safe-area-inset-bottom));
@@ -796,6 +843,11 @@ padding-bottom:76px;
 </style>
 </head>
 <body>
+
+<div class="top-strip">
+⚡ Intervention rapide en Haute-Corse · Disponible 24h/24 et 7j/7 · Devis gratuit
+</div>
+
 <header class="topbar">
 <div class="container nav">
 <a href="#" class="brand">
@@ -863,6 +915,15 @@ padding-bottom:76px;
 </div>
 </section>
 
+<section class="section-tight" style="background:#fff;">
+<div class="container" style="display:flex; flex-wrap:wrap; gap:20px; justify-content:space-between; text-align:center;">
+<div><strong>+100 chantiers réalisés</strong><br><span class="muted">en Corse</span></div>
+<div><strong>Intervention rapide</strong><br><span class="muted">24h/24 - 7j/7</span></div>
+<div><strong>Particuliers & professionnels</strong><br><span class="muted">accompagnement complet</span></div>
+<div><strong>Devis clair et rapide</strong><br><span class="muted">sans surprise</span></div>
+</div>
+</section>
+
 <section class="section" id="prestations">
 <div class="container">
 <div class="eyebrow">Prestations</div>
@@ -923,6 +984,27 @@ padding-bottom:76px;
 <div class="reason">
 <strong>Une prise de contact rapide</strong>
 <p>Appel, WhatsApp ou devis en ligne : le site est pensé pour générer rapidement une demande claire et exploitable.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="eyebrow">Engagement qualité</div>
+<h2>Un niveau d’exigence élevé sur chaque intervention</h2>
+<div class="grid-3">
+<div class="card">
+<h3>Travail propre</h3>
+<p>Chaque chantier est réalisé avec soin, propreté et organisation pour garantir un rendu final irréprochable.</p>
+</div>
+<div class="card">
+<h3>Respect des délais</h3>
+<p>Les délais annoncés sont respectés avec un suivi sérieux du début jusqu’à la fin des travaux.</p>
+</div>
+<div class="card">
+<h3>Accompagnement client</h3>
+<p>Conseils, explications et suivi : chaque client est accompagné pour comprendre et valider les choix techniques.</p>
 </div>
 </div>
 </div>
@@ -1039,8 +1121,8 @@ AE ELEC accorde une grande importance à la qualité d’exécution, à la propr
 <div class="cta">
 <div>
 <div class="eyebrow" style="color:#ffd653">Besoin d’un devis ?</div>
-<h2>Parlons de votre projet et trouvons rapidement la solution adaptée</h2>
-<p>AE ELEC intervient sur des demandes courantes comme sur des projets plus complets, avec le même objectif : un résultat fiable, propre et durable partout en Corse.</p>
+<h2>Obtenez un devis rapide et une intervention fiable</h2>
+<p>Expliquez votre besoin en quelques secondes. AE ELEC vous recontacte rapidement avec une solution claire et adaptée.</p>
 </div>
 <div style="display:flex; gap:14px; flex-wrap:wrap;">
 <a href="#contact" class="btn btn-primary">Demander un devis</a>
@@ -1144,9 +1226,18 @@ Nous reviendrons vers vous rapidement pour faire le point ensemble.
 <div class="container">
 <img src="./images/logo.jpeg" alt="AE ELEC">
 <p><strong>AE ELEC</strong> — Électricité générale en Corse</p>
-<p style="margin-top:8px;">ZI de Tragone, 20620 Biguglia · 06 99 44 19 77 · 06 50 17 23 02</p>
+<p style="margin-top:8px;">
+ZI de Tragone, 20620 Biguglia<br>
+06 99 44 19 77 · 06 50 17 23 02<br>
+Email : Aeelecbastia@gmail.com
+</p>
+<p style="margin-top:12px; font-size:13px;">
+© AE ELEC — Tous droits réservés · Électricien Biguglia Bastia · Corse
+</p>
 </div>
 </footer>
+
+<a href="https://wa.me/33699441977" target="_blank" class="whatsapp-float">💬 WhatsApp</a>
 
 <div class="mobile-bar">
 <a href="tel:0699441977" class="call-btn">📞 Appeler</a>
@@ -1173,5 +1264,6 @@ alert("Une erreur est survenue. Veuillez réessayer.");
 });
 }
 </script>
+
 </body>
 </html>
