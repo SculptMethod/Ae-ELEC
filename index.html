@@ -4,9 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>AE ELEC — Électricien à Biguglia, Bastia et dans toute la Corse</title>
-<meta name="description" content="Électricien à Biguglia, Bastia et dans toute la Corse – AE ELEC. Installation électrique, dépannage 24h/24, climatisation, borne de recharge, domotique, alarme et vidéosurveillance. Devis rapide et intervention soignée." />
+<meta name="description" content="AE ELEC accompagne particuliers et professionnels à Biguglia, Bastia et dans toute la Corse pour les travaux d’électricité générale, le dépannage, la mise en conformité, la climatisation, les bornes de recharge et les solutions de sécurité." />
 <meta name="robots" content="index, follow" />
 <meta name="author" content="AE ELEC" />
+<meta name="theme-color" content="#0b4f9c" />
 <style>
 :root{
 --blue:#0b4f9c;
@@ -19,7 +20,8 @@
 --muted:#667487;
 --line:#d8dee6;
 --shadow:0 18px 46px rgba(8,57,111,.10);
---shadow-strong:0 22px 54px rgba(8,57,111,.16);
+--shadow-strong:0 24px 60px rgba(8,57,111,.16);
+--radius:22px;
 --max:1200px;
 }
 
@@ -36,7 +38,7 @@ margin:0;
 font-family:Arial, Helvetica, sans-serif;
 color:var(--text);
 background:var(--bg);
-line-height:1.55;
+line-height:1.6;
 overflow-x:hidden;
 }
 
@@ -56,7 +58,11 @@ margin:0 auto;
 }
 
 .section{
-padding:84px 0;
+padding:88px 0;
+}
+
+.section-tight{
+padding:64px 0;
 }
 
 h1,h2,h3,p{
@@ -64,13 +70,13 @@ margin:0;
 }
 
 h1{
-font-size:clamp(34px,6vw,70px);
+font-size:clamp(38px,6vw,74px);
 line-height:1.02;
-letter-spacing:-.04em;
+letter-spacing:-.045em;
 }
 
 h2{
-font-size:clamp(28px,4vw,46px);
+font-size:clamp(28px,4vw,48px);
 line-height:1.08;
 letter-spacing:-.03em;
 }
@@ -85,7 +91,7 @@ display:inline-block;
 margin-bottom:14px;
 font-size:12px;
 text-transform:uppercase;
-letter-spacing:.12em;
+letter-spacing:.14em;
 font-weight:800;
 color:var(--blue);
 }
@@ -147,7 +153,7 @@ border-bottom:1px solid rgba(8,57,111,.08);
 }
 
 .nav{
-min-height:80px;
+min-height:82px;
 display:flex;
 align-items:center;
 justify-content:space-between;
@@ -205,33 +211,33 @@ position:relative;
 overflow:hidden;
 color:#fff;
 background:
-radial-gradient(circle at top right, rgba(244,196,21,.18), transparent 28%),
+radial-gradient(circle at top right, rgba(244,196,21,.20), transparent 26%),
 linear-gradient(135deg, #0b4f9c 0%, #08396f 48%, #06284f 100%);
-padding:76px 0 92px;
+padding:86px 0 104px;
 }
 
 .hero::before{
 content:"";
 position:absolute;
 inset:0;
-background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
+background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0));
 pointer-events:none;
 }
 
 .hero-grid{
 position:relative;
 display:grid;
-grid-template-columns:1.08fr .92fr;
-gap:40px;
+grid-template-columns:1.05fr .95fr;
+gap:44px;
 align-items:center;
 }
 
 .hero-copy{
-max-width:740px;
+max-width:760px;
 }
 
 .hero p{
-margin-top:20px;
+margin-top:22px;
 color:#dde7f3;
 font-size:18px;
 max-width:720px;
@@ -241,14 +247,14 @@ max-width:720px;
 display:flex;
 gap:14px;
 flex-wrap:wrap;
-margin-top:28px;
+margin-top:30px;
 }
 
 .hero-points{
 display:flex;
 gap:10px;
 flex-wrap:wrap;
-margin-top:32px;
+margin-top:34px;
 }
 
 .hero-point{
@@ -270,21 +276,21 @@ box-shadow:var(--shadow-strong);
 }
 
 .hero-visual{
-min-height:480px;
-border-radius:22px;
+min-height:500px;
+border-radius:24px;
 background:linear-gradient(180deg, rgba(255,255,255,.98), rgba(255,255,255,.93));
 display:flex;
 align-items:center;
 justify-content:center;
-padding:36px;
+padding:40px;
 }
 
 .hero-visual img{
-max-width:420px;
+max-width:430px;
 }
 
 .quick-bar{
-margin-top:-38px;
+margin-top:-42px;
 position:relative;
 z-index:3;
 }
@@ -315,7 +321,7 @@ color:var(--muted);
 font-weight:600;
 }
 
-.services-grid{
+.grid-3{
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:18px;
@@ -325,7 +331,7 @@ margin-top:32px;
 .card{
 background:#fff;
 border:1px solid var(--line);
-border-radius:22px;
+border-radius:var(--radius);
 padding:26px;
 box-shadow:var(--shadow);
 }
@@ -404,7 +410,7 @@ margin-top:32px;
 }
 
 .gallery-item{
-min-height:280px;
+min-height:300px;
 border-radius:24px;
 overflow:hidden;
 position:relative;
@@ -423,7 +429,7 @@ object-fit:cover;
 position:absolute;
 left:16px;
 bottom:16px;
-background:rgba(8,57,111,.86);
+background:rgba(8,57,111,.88);
 color:#fff;
 padding:10px 14px;
 border-radius:14px;
@@ -552,7 +558,7 @@ background:#fff;
 }
 
 .footer{
-padding:30px 0 90px;
+padding:34px 0 92px;
 text-align:center;
 color:var(--muted);
 }
@@ -616,7 +622,7 @@ grid-template-columns:1fr;
 }
 
 .quick-grid,
-.services-grid,
+.grid-3,
 .gallery,
 .process{
 grid-template-columns:repeat(2,1fr);
@@ -627,7 +633,7 @@ grid-template-columns:1fr;
 }
 
 .hero-visual{
-min-height:360px;
+min-height:380px;
 }
 }
 
@@ -638,6 +644,10 @@ display:none;
 
 .section{
 padding:64px 0;
+}
+
+.section-tight{
+padding:48px 0;
 }
 
 .container{
@@ -669,13 +679,13 @@ letter-spacing:.08em;
 }
 
 .hero{
-padding:44px 0 78px;
+padding:48px 0 80px;
 text-align:center;
 }
 
 .hero-grid,
 .quick-grid,
-.services-grid,
+.grid-3,
 .gallery,
 .process,
 .contact-grid,
@@ -810,8 +820,8 @@ padding-bottom:76px;
 <div class="container hero-grid">
 <div class="hero-copy">
 <div class="eyebrow" style="color:#ffd653">AE ELEC · Biguglia · Bastia · Corse</div>
-<h1>Des installations électriques fiables, un accompagnement sérieux et un niveau de finition à la hauteur de vos exigences.</h1>
-<p>AE ELEC accompagne particuliers et professionnels à Biguglia, Bastia et dans toute la Corse pour les travaux d’électricité générale, le dépannage, la mise en conformité, la climatisation, les bornes de recharge et les solutions de sécurité. Chaque intervention est pensée pour être claire, réactive et parfaitement soignée.</p>
+<h1>Un niveau d’exigence élevé pour des installations électriques fiables, propres et durables.</h1>
+<p>AE ELEC accompagne particuliers et professionnels à Biguglia, Bastia et dans toute la Corse pour les travaux d’électricité générale, le dépannage, la mise en conformité, la climatisation, les bornes de recharge et les solutions de sécurité. Chaque intervention est pensée pour allier réactivité, clarté et qualité d’exécution.</p>
 <div class="hero-actions">
 <a href="#contact" class="btn btn-primary">Demander un devis</a>
 <a href="tel:0699441977" class="btn btn-outline">Appeler maintenant</a>
@@ -858,7 +868,7 @@ padding-bottom:76px;
 <div class="eyebrow">Prestations</div>
 <h2>Des services électriques complets pour particuliers et professionnels en Haute-Corse et dans toute la Corse</h2>
 <p class="muted" style="margin-top:16px; max-width:860px;">AE ELEC intervient pour les travaux d’électricité générale, le dépannage, l’installation de bornes de recharge, la climatisation, la domotique et les solutions de sécurité. Notre objectif : un chantier propre, fiable et un résultat durable.</p>
-<div class="services-grid">
+<div class="grid-3">
 <article class="card">
 <div class="icon">⚡</div>
 <h3>Électricité générale</h3>
@@ -965,33 +975,26 @@ padding-bottom:76px;
 <div class="eyebrow">Avis clients</div>
 <h2>La satisfaction client est au cœur de chaque intervention</h2>
 <p class="muted" style="margin-top:16px; max-width:860px;">
-AE ELEC accorde une grande importance à la qualité d’exécution, à la propreté du chantier et au sérieux du suivi.
-Les avis clients seront ajoutés au fur et à mesure des interventions réalisées afin de refléter une expérience réelle, transparente et fidèle au travail effectué.
+AE ELEC accorde une grande importance à la qualité d’exécution, à la propreté du chantier et au sérieux du suivi. Les avis clients seront ajoutés au fur et à mesure des interventions réalisées afin de refléter une expérience réelle, transparente et fidèle au travail effectué.
 </p>
 
-<div class="services-grid" style="margin-top:28px;">
+<div class="grid-3" style="margin-top:28px;">
 <div class="card">
 <div class="icon">⭐</div>
 <h3>Des retours authentiques</h3>
-<p>
-Chaque avis publié correspondra à une intervention réellement effectuée, afin de garantir une image honnête et crédible de l’entreprise.
-</p>
+<p>Chaque avis publié correspondra à une intervention réellement effectuée, afin de garantir une image honnête et crédible de l’entreprise.</p>
 </div>
 
 <div class="card">
 <div class="icon">🤝</div>
 <h3>Une relation de confiance</h3>
-<p>
-Disponibilité, clarté des échanges et sérieux du suivi : chaque chantier est traité avec le même niveau d’exigence, du premier contact jusqu’au rendu final.
-</p>
+<p>Disponibilité, clarté des échanges et sérieux du suivi : chaque chantier est traité avec le même niveau d’exigence, du premier contact jusqu’au rendu final.</p>
 </div>
 
 <div class="card">
 <div class="icon">🛠️</div>
 <h3>Une qualité constante</h3>
-<p>
-L’objectif est simple : proposer des prestations propres, fiables et durables, pour que chaque client puisse recommander AE ELEC en toute confiance.
-</p>
+<p>L’objectif est simple : proposer des prestations propres, fiables et durables, pour que chaque client puisse recommander AE ELEC en toute confiance.</p>
 </div>
 </div>
 
