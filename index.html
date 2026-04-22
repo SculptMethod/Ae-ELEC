@@ -11,6 +11,7 @@
 :root{
 --blue:#0b4f9c;
 --blue-dark:#08396f;
+--blue-deep:#06284f;
 --yellow:#f4c415;
 --bg:#eef2f6;
 --white:#ffffff;
@@ -18,6 +19,7 @@
 --muted:#667487;
 --line:#d8dee6;
 --shadow:0 18px 46px rgba(8,57,111,.10);
+--shadow-strong:0 22px 54px rgba(8,57,111,.16);
 --max:1200px;
 }
 
@@ -124,6 +126,17 @@ color:#fff;
 background:rgba(255,255,255,.08);
 }
 
+.btn-light{
+background:#fff;
+color:var(--text);
+border:1px solid var(--line);
+}
+
+.btn-light:hover{
+transform:translateY(-2px);
+box-shadow:var(--shadow);
+}
+
 .topbar{
 position:sticky;
 top:0;
@@ -197,7 +210,16 @@ linear-gradient(135deg, #0b4f9c 0%, #08396f 48%, #06284f 100%);
 padding:76px 0 92px;
 }
 
+.hero::before{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
+pointer-events:none;
+}
+
 .hero-grid{
+position:relative;
 display:grid;
 grid-template-columns:1.08fr .92fr;
 gap:40px;
@@ -208,7 +230,7 @@ align-items:center;
 margin-top:20px;
 color:#dde7f3;
 font-size:18px;
-max-width:700px;
+max-width:720px;
 }
 
 .hero-actions{
@@ -240,7 +262,7 @@ padding:22px;
 border-radius:28px;
 background:rgba(255,255,255,.08);
 border:1px solid rgba(255,255,255,.12);
-box-shadow:var(--shadow);
+box-shadow:var(--shadow-strong);
 }
 
 .hero-visual{
@@ -448,7 +470,7 @@ padding:42px;
 border-radius:28px;
 background:linear-gradient(135deg, #0b4f9c 0%, #08396f 100%);
 color:#fff;
-box-shadow:var(--shadow);
+box-shadow:var(--shadow-strong);
 }
 
 .cta p{
@@ -771,6 +793,7 @@ padding-bottom:76px;
 <a href="#prestations">Prestations</a>
 <a href="#realisations">Réalisations</a>
 <a href="#zones">Zone d’intervention</a>
+<a href="#avis">Avis</a>
 <a href="#contact">Contact</a>
 <a href="#contact" class="btn btn-primary">Demander un devis</a>
 </nav>
@@ -931,26 +954,44 @@ padding-bottom:76px;
 </div>
 </section>
 
-<section class="section">
+<section class="section" id="avis">
 <div class="container">
 <div class="eyebrow">Avis clients</div>
-<h2>Ils nous font confiance pour leurs travaux électriques en Corse</h2>
-<div class="services-grid">
+<h2>La satisfaction client est au cœur de chaque intervention</h2>
+<p class="muted" style="margin-top:16px; max-width:860px;">
+AE ELEC accorde une grande importance à la qualité d’exécution, à la propreté du chantier et au sérieux du suivi.
+Les avis clients seront ajoutés au fur et à mesure des interventions réalisées afin de refléter une expérience réelle, transparente et fidèle au travail effectué.
+</p>
+
+<div class="services-grid" style="margin-top:28px;">
 <div class="card">
-<p>⭐⭐⭐⭐⭐</p>
-<p>“Intervention rapide et travail impeccable. Équipe sérieuse et très propre du début à la fin.”</p>
-<strong>Client à Bastia</strong>
+<div class="icon">⭐</div>
+<h3>Des retours authentiques</h3>
+<p>
+Chaque avis publié correspondra à une intervention réellement effectuée, afin de garantir une image honnête et crédible de l’entreprise.
+</p>
 </div>
+
 <div class="card">
-<p>⭐⭐⭐⭐⭐</p>
-<p>“Devis clair, délais respectés et rendu final parfait. Je recommande AE ELEC sans hésiter.”</p>
-<strong>Client à Biguglia</strong>
+<div class="icon">🤝</div>
+<h3>Une relation de confiance</h3>
+<p>
+Disponibilité, clarté des échanges et sérieux du suivi : chaque chantier est traité avec le même niveau d’exigence, du premier contact jusqu’au rendu final.
+</p>
 </div>
+
 <div class="card">
-<p>⭐⭐⭐⭐⭐</p>
-<p>“Très bon suivi, très professionnel. Une entreprise sérieuse pour des travaux électriques en Corse.”</p>
-<strong>Client en Haute-Corse</strong>
+<div class="icon">🛠️</div>
+<h3>Une qualité constante</h3>
+<p>
+L’objectif est simple : proposer des prestations propres, fiables et durables, pour que chaque client puisse recommander AE ELEC en toute confiance.
+</p>
 </div>
+</div>
+
+<div style="display:flex; gap:14px; flex-wrap:wrap; margin-top:24px;">
+<a href="https://www.google.com/search?q=AE+ELEC+Biguglia" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Laisser un avis</a>
+<a href="#contact" class="btn btn-light">Nous contacter</a>
 </div>
 </div>
 </section>
