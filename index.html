@@ -562,6 +562,15 @@ background:var(--blue);
 color:#fff;
 }
 
+#confirmation-message{
+display:none;
+margin-top:20px;
+padding:20px;
+background:#eaf6ff;
+border-radius:14px;
+border:1px solid #cfe8ff;
+}
+
 @media (max-width: 1050px){
 .hero-grid,
 .cta,
@@ -977,14 +986,39 @@ padding-bottom:76px;
 <span>Instagram : Ae.elec<br>Facebook : AE Elec</span>
 </div>
 </div>
+
 <div class="contact-card">
-<form>
-<input type="text" placeholder="Nom" />
-<input type="tel" placeholder="Téléphone" />
-<input type="email" placeholder="Email" />
-<textarea placeholder="Décrivez votre projet"></textarea>
+<form
+name="demande-devis"
+method="POST"
+data-netlify="true"
+netlify-honeypot="bot-field"
+onsubmit="showMessage(event)"
+>
+<input type="hidden" name="form-name" value="demande-devis" />
+
+<p style="display:none;">
+<label>Ne pas remplir :
+<input name="bot-field" />
+</label>
+</p>
+
+<input type="text" name="nom" placeholder="Nom" required />
+<input type="tel" name="telephone" placeholder="Téléphone" required />
+<input type="email" name="email" placeholder="Email" required />
+<textarea name="message" placeholder="Décrivez votre projet" required></textarea>
+
 <button type="submit" class="btn btn-primary">Envoyer la demande</button>
 </form>
+
+<div id="confirmation-message">
+<strong style="color:#0b4f9c; font-size:18px;">Demande envoyée ✅</strong>
+<p style="margin-top:10px; color:#142033;">
+Merci pour votre demande.<br>
+AE ELEC va traiter votre devis dans les plus brefs délais.<br>
+Vous serez recontacté rapidement.
+</p>
+</div>
 </div>
 </div>
 </div>
@@ -1002,5 +1036,26 @@ padding-bottom:76px;
 <a href="tel:0699441977" class="call-btn">📞 Appeler</a>
 <a href="https://wa.me/33699441977" class="wa-btn">WhatsApp</a>
 </div>
+
+<script>
+function showMessage(event) {
+event.preventDefault();
+
+const form = event.target;
+const data = new FormData(form);
+
+fetch("/", {
+method: "POST",
+body: data
+})
+.then(() => {
+form.style.display = "none";
+document.getElementById("confirmation-message").style.display = "block";
+})
+.catch(() => {
+alert("Une erreur est survenue. Veuillez réessayer.");
+});
+}
+</script>
 </body>
 </html>
