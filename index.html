@@ -43,7 +43,7 @@
 --shadow:0 18px 46px rgba(8,57,111,.10);
 --shadow-strong:0 24px 60px rgba(8,57,111,.16);
 --radius:22px;
---max:1240px;
+--max:1200px;
 }
 
 *{
@@ -91,7 +91,7 @@ margin:0;
 }
 
 h1{
-font-size:clamp(40px,6vw,72px);
+font-size:clamp(38px,6vw,70px);
 line-height:1.02;
 letter-spacing:-.045em;
 }
@@ -125,7 +125,6 @@ color:var(--muted);
 display:inline-flex;
 align-items:center;
 justify-content:center;
-gap:10px;
 padding:15px 22px;
 border-radius:14px;
 font-weight:800;
@@ -168,34 +167,27 @@ box-shadow:var(--shadow);
 .top-strip{
 background:#0b4f9c;
 color:#fff;
-padding:11px 14px;
+text-align:center;
+padding:10px 14px;
 font-size:14px;
 font-weight:700;
-}
-
-.top-strip .container{
-display:flex;
-justify-content:center;
-gap:34px;
-flex-wrap:wrap;
-text-align:center;
 }
 
 .topbar{
 position:sticky;
 top:0;
 z-index:50;
-background:rgba(255,255,255,.92);
+background:rgba(238,242,246,.86);
 backdrop-filter:blur(14px);
 border-bottom:1px solid rgba(8,57,111,.08);
 }
 
 .nav{
-min-height:86px;
+min-height:82px;
 display:flex;
 align-items:center;
 justify-content:space-between;
-gap:24px;
+gap:20px;
 }
 
 .brand{
@@ -206,16 +198,36 @@ min-width:0;
 }
 
 .brand img{
-width:220px;
-height:auto;
+width:60px;
+height:60px;
 object-fit:contain;
+background:#fff;
+border-radius:14px;
+padding:8px;
+box-shadow:0 8px 18px rgba(0,0,0,.05);
 flex-shrink:0;
+}
+
+.brand strong{
+display:block;
+font-size:22px;
+color:var(--blue-dark);
+line-height:1.04;
+}
+
+.brand span{
+display:block;
+font-size:12px;
+color:var(--muted);
+text-transform:uppercase;
+letter-spacing:.12em;
+margin-top:4px;
 }
 
 .menu{
 display:flex;
 align-items:center;
-gap:26px;
+gap:24px;
 color:#304055;
 font-weight:700;
 }
@@ -227,43 +239,38 @@ color:var(--blue);
 .hero{
 position:relative;
 overflow:hidden;
-background:linear-gradient(180deg,#f7f9fc 0%, #eef2f6 100%);
-padding:30px 0 0;
+color:#fff;
+background:
+radial-gradient(circle at top right, rgba(244,196,21,.20), transparent 26%),
+linear-gradient(135deg, #0b4f9c 0%, #08396f 48%, #06284f 100%);
+padding:86px 0 104px;
 }
 
-.hero-shell{
+.hero::before{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0));
+pointer-events:none;
+}
+
+.hero-grid{
 position:relative;
 display:grid;
-grid-template-columns:1.06fr .94fr;
-min-height:560px;
-border-radius:0 0 34px 34px;
-overflow:hidden;
-background:
-linear-gradient(90deg, rgba(8,57,111,.95) 0%, rgba(8,57,111,.93) 42%, rgba(8,57,111,.15) 62%, rgba(8,57,111,0) 100%);
-box-shadow:var(--shadow-strong);
+grid-template-columns:1.05fr .95fr;
+gap:44px;
+align-items:center;
 }
 
-.hero-left{
-position:relative;
-z-index:2;
-padding:64px 48px 36px;
-color:#fff;
-display:flex;
-flex-direction:column;
-justify-content:center;
+.hero-copy{
 max-width:760px;
 }
 
-.hero-left .eyebrow{
-color:#ffd653;
-margin-bottom:16px;
-}
-
-.hero-left p{
+.hero p{
 margin-top:22px;
 color:#dde7f3;
 font-size:18px;
-max-width:700px;
+max-width:720px;
 }
 
 .hero-actions{
@@ -275,42 +282,41 @@ margin-top:30px;
 
 .hero-points{
 display:flex;
-gap:24px;
+gap:10px;
 flex-wrap:wrap;
-margin-top:28px;
+margin-top:34px;
 }
 
 .hero-point{
-display:flex;
-align-items:flex-start;
-gap:10px;
-max-width:180px;
-color:#eff4f9;
-font-size:15px;
-font-weight:700;
-line-height:1.35;
-}
-
-.hero-point-icon{
-width:26px;
-height:26px;
-border:2px solid rgba(244,196,21,.95);
+padding:10px 14px;
 border-radius:999px;
-display:flex;
-align-items:center;
-justify-content:center;
+background:rgba(255,255,255,.10);
+border:1px solid rgba(255,255,255,.12);
+color:#eff4f9;
 font-size:14px;
-color:#ffd653;
-flex-shrink:0;
-margin-top:1px;
+font-weight:700;
 }
 
-.hero-right{
+.hero-card{
+padding:18px;
+border-radius:28px;
+background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.12);
+box-shadow:var(--shadow-strong);
+}
+
+.hero-visual{
+min-height:500px;
+border-radius:24px;
+overflow:hidden;
 position:relative;
-min-height:560px;
+background:#fff;
+display:flex;
+align-items:flex-end;
+justify-content:flex-start;
 }
 
-.hero-right img.hero-photo{
+.hero-visual-bg{
 position:absolute;
 inset:0;
 width:100%;
@@ -318,31 +324,28 @@ height:100%;
 object-fit:cover;
 }
 
-.hero-right::after{
-content:"";
+.hero-visual-overlay{
 position:absolute;
 inset:0;
-background:linear-gradient(90deg, rgba(8,57,111,.04) 0%, rgba(8,57,111,.18) 100%);
+background:linear-gradient(180deg, rgba(6,40,79,.08) 0%, rgba(6,40,79,.52) 100%);
 }
 
 .hero-logo-card{
-position:absolute;
-left:50%;
-top:52%;
-transform:translate(-40%,-50%);
-z-index:3;
-width:300px;
-background:rgba(255,255,255,.97);
-border:1px solid rgba(255,255,255,.8);
-border-radius:28px;
-padding:18px 18px 16px;
-box-shadow:0 24px 60px rgba(0,0,0,.18);
+position:relative;
+z-index:2;
+margin:24px;
+width:315px;
+background:rgba(255,255,255,.98);
+border:1px solid rgba(255,255,255,.75);
+border-radius:26px;
+padding:16px;
+box-shadow:0 20px 46px rgba(0,0,0,.18);
 backdrop-filter:blur(10px);
 }
 
 .hero-logo-frame{
 width:100%;
-height:190px;
+height:178px;
 display:flex;
 align-items:center;
 justify-content:center;
@@ -350,55 +353,56 @@ background:linear-gradient(180deg,#ffffff 0%, #f8fbff 100%);
 border:1px solid rgba(8,57,111,.08);
 border-radius:20px;
 overflow:hidden;
+position:relative;
 }
 
 .hero-logo-frame img{
-width:86%;
-height:86%;
+width:78%;
+height:78%;
 object-fit:contain;
 object-position:center;
-transform:scale(1.36);
+transform:scale(1.45);
 transform-origin:center;
+display:block;
+}
+
+.hero-logo-card strong{
+display:block;
+text-align:center;
+font-size:21px;
+color:var(--blue-dark);
+line-height:1.05;
+margin-top:14px;
+}
+
+.hero-logo-card span{
+display:block;
+text-align:center;
+margin-top:6px;
+font-size:12px;
+letter-spacing:.08em;
+text-transform:uppercase;
+color:var(--muted);
 }
 
 .hero-badge{
 position:absolute;
-right:26px;
-bottom:34px;
-z-index:3;
-display:flex;
-gap:14px;
-align-items:center;
-background:rgba(8,57,111,.92);
+right:18px;
+bottom:18px;
+z-index:2;
+background:rgba(8,57,111,.90);
 color:#fff;
-padding:16px 18px;
-border-radius:18px;
-box-shadow:0 16px 34px rgba(8,57,111,.22);
-border:1px solid rgba(255,255,255,.12);
-max-width:300px;
-}
-
-.hero-badge-icon{
-width:44px;
-height:44px;
+padding:12px 16px;
 border-radius:14px;
-background:rgba(255,255,255,.08);
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:22px;
-flex-shrink:0;
-}
-
-.hero-badge strong{
-display:block;
-font-size:16px;
-line-height:1.35;
-font-weight:800;
+font-size:14px;
+font-weight:700;
+backdrop-filter:blur(10px);
+max-width:260px;
+text-align:center;
 }
 
 .quick-bar{
-margin-top:20px;
+margin-top:-42px;
 position:relative;
 z-index:3;
 }
@@ -411,68 +415,22 @@ gap:16px;
 
 .quick{
 background:#fff;
-border:1px solid #e3e8ef;
-border-radius:22px;
-padding:26px 20px;
+border:1px solid var(--line);
+border-radius:20px;
+padding:22px;
 box-shadow:var(--shadow);
-}
-
-.quick-icon{
-width:58px;
-height:58px;
-border-radius:999px;
-display:flex;
-align-items:center;
-justify-content:center;
-background:#0b4f9c;
-color:#fff;
-font-size:26px;
-margin-bottom:18px;
 }
 
 .quick strong{
 display:block;
 color:var(--blue-dark);
-font-size:18px;
-margin-bottom:10px;
+font-size:24px;
+margin-bottom:8px;
 }
 
 .quick span{
 color:var(--muted);
 font-weight:600;
-}
-
-.mini-strip{
-margin-top:22px;
-background:#fff;
-border:1px solid #e6ebf1;
-border-radius:18px;
-padding:18px 20px;
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:18px;
-box-shadow:var(--shadow);
-}
-
-.mini-item{
-display:flex;
-align-items:center;
-gap:12px;
-font-weight:700;
-color:#23344b;
-}
-
-.mini-icon{
-width:40px;
-height:40px;
-border-radius:999px;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:20px;
-color:#0b4f9c;
-background:rgba(11,79,156,.08);
-flex-shrink:0;
 }
 
 .grid-3{
@@ -832,49 +790,33 @@ border-radius:14px;
 border:1px solid #cfe8ff;
 }
 
-@media (max-width: 1160px){
-.hero-shell{
+@media (max-width: 1050px){
+.hero-grid,
+.cta,
+.contact-grid{
 grid-template-columns:1fr;
-min-height:auto;
-}
-
-.hero-left{
-max-width:none;
-padding:54px 28px 32px;
-}
-
-.hero-right{
-min-height:420px;
-}
-
-.hero-logo-card{
-left:50%;
-top:48%;
-transform:translate(-50%,-50%);
 }
 
 .quick-grid,
 .grid-3,
 .gallery,
 .process,
-.before-after-grid,
-.mini-strip{
+.before-after-grid{
 grid-template-columns:repeat(2,1fr);
+}
+
+.reasons{
+grid-template-columns:1fr;
+}
+
+.hero-visual{
+min-height:380px;
 }
 }
 
 @media (max-width: 760px){
 .menu{
 display:none;
-}
-
-.top-strip .container{
-gap:12px;
-font-size:13px;
-}
-
-.brand img{
-width:180px;
 }
 
 .section{
@@ -893,26 +835,58 @@ width:calc(100% - 24px);
 min-height:72px;
 }
 
+.brand{
+width:100%;
+gap:12px;
+}
+
+.brand img{
+width:52px;
+height:52px;
+}
+
+.brand strong{
+font-size:18px;
+line-height:1.1;
+}
+
+.brand span{
+font-size:11px;
+letter-spacing:.08em;
+}
+
 .hero{
-padding:18px 0 0;
+padding:48px 0 80px;
+text-align:center;
 }
 
-.hero-shell{
-border-radius:0 0 26px 26px;
-}
-
-.hero-left{
-padding:38px 20px 24px;
+.hero-grid,
+.quick-grid,
+.grid-3,
+.gallery,
+.process,
+.contact-grid,
+.cta,
+.reasons,
+.before-after-grid{
+grid-template-columns:1fr !important;
 }
 
 .hero h1{
-font-size:clamp(34px, 9vw, 48px);
+font-size:clamp(32px, 8vw, 48px);
 line-height:1.06;
 letter-spacing:-.035em;
+text-align:center;
+overflow-wrap:anywhere;
+max-width:900px;
+margin:0 auto;
 }
 
-.hero-left p{
+.hero p{
 font-size:15px;
+max-width:100%;
+text-align:center;
+overflow-wrap:anywhere;
 }
 
 .hero-actions{
@@ -927,57 +901,71 @@ width:100%;
 
 .hero-points{
 flex-direction:column;
-gap:12px;
+gap:10px;
 }
 
 .hero-point{
-max-width:none;
+width:100%;
+text-align:center;
 }
 
-.hero-right{
-min-height:360px;
+.hero-card,
+.hero-visual,
+.card,
+.quick,
+.reason,
+.step,
+.info,
+.contact-card,
+.gallery-item,
+.before-after-card{
+width:100%;
+min-width:0;
+}
+
+.hero-visual{
+min-height:320px;
+align-items:flex-end;
+justify-content:flex-start;
 }
 
 .hero-logo-card{
-width:230px;
+margin:16px;
+width:240px;
 padding:12px;
-left:50%;
-top:46%;
-transform:translate(-50%,-50%);
 }
 
 .hero-logo-frame{
-height:136px;
+height:132px;
 }
 
 .hero-logo-frame img{
-width:86%;
-height:86%;
-transform:scale(1.30);
+width:78%;
+height:78%;
+transform:scale(1.38);
+}
+
+.hero-logo-card strong{
+font-size:18px;
+margin-top:12px;
+}
+
+.hero-logo-card span{
+font-size:11px;
 }
 
 .hero-badge{
+left:auto;
 right:12px;
-left:12px;
 bottom:12px;
-max-width:none;
-padding:14px;
-}
-
-.quick-grid,
-.grid-3,
-.gallery,
-.process,
-.contact-grid,
-.cta,
-.reasons,
-.before-after-grid,
-.mini-strip{
-grid-template-columns:1fr !important;
+max-width:220px;
+font-size:13px;
+padding:10px 12px;
+text-align:center;
 }
 
 .quick-bar{
-margin-top:16px;
+margin-top:-24px;
 }
 
 .gallery-item{
@@ -1032,616 +1020,594 @@ padding-bottom:76px;
 <body>
 
 <div class="top-strip">
-  <div class="container">
-    <span>⚡ Dépannage rapide en Haute-Corse</span>
-    <span>🕘 Disponible 24h/24 et 7j/7</span>
-    <span>📋 Devis gratuit</span>
-  </div>
+⚡ Dépannage rapide en Haute-Corse · Disponible 24h/24 et 7j/7 · Devis gratuit
 </div>
 
 <header class="topbar">
-  <div class="container nav">
-    <a href="#" class="brand">
-      <img src="./images/logo.jpeg" alt="Logo AE ELEC">
-    </a>
-
-    <nav class="menu">
-      <a href="#prestations">Prestations</a>
-      <a href="#demandes">Besoins fréquents</a>
-      <a href="#realisations">Réalisations</a>
-      <a href="#avant-apres">Avant / Après</a>
-      <a href="#zones">Zone</a>
-      <a href="#avis">Avis</a>
-      <a href="#contact">Contact</a>
-      <a href="#contact" class="btn btn-primary">Demander un devis</a>
-    </nav>
-  </div>
+<div class="container nav">
+<a href="#" class="brand">
+<img src="./images/logo.jpeg" alt="Logo AE ELEC">
+<div>
+<strong>AE ELEC</strong>
+<span>Électricité générale en Haute-Corse</span>
+</div>
+</a>
+<nav class="menu">
+<a href="#prestations">Prestations</a>
+<a href="#demandes">Besoins fréquents</a>
+<a href="#realisations">Réalisations</a>
+<a href="#avant-apres">Avant / Après</a>
+<a href="#zones">Zone d’intervention</a>
+<a href="#avis">Avis</a>
+<a href="#contact">Contact</a>
+<a href="#contact" class="btn btn-primary">Demander un devis</a>
+</nav>
+</div>
 </header>
 
 <section class="hero">
-  <div class="container">
-    <div class="hero-shell">
-      <div class="hero-left">
-        <div class="eyebrow">AE ELEC · BIGUGLIA · BASTIA · HAUTE-CORSE</div>
-        <h1>Électricien à Biguglia,<br>Bastia et en Haute-Corse</h1>
-        <p>Dépannage rapide, installations fiables et chantiers soignés. AE ELEC accompagne particuliers et professionnels pour le dépannage électrique, la rénovation, la mise en conformité, la climatisation, les bornes de recharge, l’alarme, la vidéosurveillance et la domotique.</p>
+<div class="container hero-grid">
+<div class="hero-copy">
+<div class="eyebrow" style="color:#ffd653">AE ELEC · Biguglia · Bastia · Haute-Corse</div>
+<h1>Électricien à Biguglia, Bastia et en Haute-Corse<br>Dépannage rapide, installations fiables et chantiers soignés</h1>
+<p>AE ELEC accompagne particuliers et professionnels pour le dépannage électrique, la rénovation, la mise en conformité, la climatisation, les bornes de recharge, l’alarme, la vidéosurveillance et la domotique. Intervention rapide, devis clair et suivi sérieux.</p>
+<div class="hero-actions">
+<a href="#contact" class="btn btn-primary">Demander un devis</a>
+<a href="tel:0699441977" class="btn btn-outline">Appeler maintenant</a>
+<a href="https://wa.me/33699441977" class="btn btn-outline">WhatsApp</a>
+</div>
+<div class="hero-points">
+<div class="hero-point">Intervention rapide en Haute-Corse</div>
+<div class="hero-point">Particuliers & professionnels</div>
+<div class="hero-point">Travail soigné</div>
+<div class="hero-point">Devis clair et suivi sérieux</div>
+</div>
+</div>
 
-        <div class="hero-actions">
-          <a href="#contact" class="btn btn-primary">📞 Demander un devis</a>
-          <a href="tel:0699441977" class="btn btn-outline">📞 Appeler maintenant</a>
-          <a href="https://wa.me/33699441977" class="btn btn-outline">💬 WhatsApp</a>
-        </div>
+<div class="hero-card">
+<div class="hero-visual">
+<img class="hero-visual-bg" src="./images/hero-photo.jpeg" alt="Intervention AE ELEC sur chantier en Haute-Corse">
+<div class="hero-visual-overlay"></div>
 
-        <div class="hero-points">
-          <div class="hero-point">
-            <div class="hero-point-icon">✓</div>
-            <div>Intervention rapide en Haute-Corse</div>
-          </div>
-          <div class="hero-point">
-            <div class="hero-point-icon">✓</div>
-            <div>Particuliers & professionnels</div>
-          </div>
-          <div class="hero-point">
-            <div class="hero-point-icon">✓</div>
-            <div>Travail soigné</div>
-          </div>
-          <div class="hero-point">
-            <div class="hero-point-icon">✓</div>
-            <div>Devis clair et suivi sérieux</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-right">
-        <img class="hero-photo" src="./images/hero-photo.jpeg" alt="Intervention AE ELEC sur chantier en Haute-Corse">
-
-        <div class="hero-logo-card">
-          <div class="hero-logo-frame">
-            <img src="./images/logo.jpeg" alt="Logo AE ELEC">
-          </div>
-        </div>
-
-        <div class="hero-badge">
-          <div class="hero-badge-icon">🛡️</div>
-          <div>
-            <strong>Installation propre<br>Finitions soignées<br>Réactivité locale</strong>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="quick-bar">
-      <div class="quick-grid">
-        <div class="quick">
-          <div class="quick-icon">⚡</div>
-          <strong>Réponse rapide</strong>
-          <span>Prise de contact simple par téléphone, WhatsApp ou formulaire avec retour rapide selon l’urgence.</span>
-        </div>
-        <div class="quick">
-          <div class="quick-icon">📍</div>
-          <strong>Basé à Biguglia</strong>
-          <span>Entreprise locale avec interventions à Bastia, Lucciana, Borgo, Furiani et plus largement en Haute-Corse.</span>
-        </div>
-        <div class="quick">
-          <div class="quick-icon">📋</div>
-          <strong>Devis clair</strong>
-          <span>Une réponse compréhensible, structurée et adaptée au besoin réel du client, sans complication inutile.</span>
-        </div>
-        <div class="quick">
-          <div class="quick-icon">🔌</div>
-          <strong>Prestations complètes</strong>
-          <span>Électricité, climatisation, sécurité, domotique et bornes de recharge pour particuliers et professionnels.</span>
-        </div>
-      </div>
-
-      <div class="mini-strip">
-        <div class="mini-item"><div class="mini-icon">🏢</div><span>Entreprise locale basée à Biguglia</span></div>
-        <div class="mini-item"><div class="mini-icon">🕘</div><span>Intervention rapide en Haute-Corse</span></div>
-        <div class="mini-item"><div class="mini-icon">👥</div><span>Particuliers & professionnels accompagnement complet</span></div>
-        <div class="mini-item"><div class="mini-icon">🛡️</div><span>Travail soigné et suivi sérieux</span></div>
-      </div>
-    </div>
+<div class="hero-logo-card">
+  <div class="hero-logo-frame">
+    <img src="./images/logo.jpeg" alt="Logo AE ELEC">
   </div>
+  <strong>AE ELEC</strong>
+  <span>Électricité générale en Haute-Corse</span>
+</div>
+
+<div class="hero-badge">Installation propre • Finitions soignées • Réactivité locale</div>
+</div>
+</div>
+</div>
 </section>
 
-<section class="section-tight">
-  <div class="container">
-    <div class="card" style="background:#f8f2e2;border-color:#efe0b5;">
-      <div style="display:grid;grid-template-columns:120px 1fr 260px;gap:24px;align-items:center;">
-        <div style="width:90px;height:90px;border-radius:999px;background:#f4c415;display:flex;align-items:center;justify-content:center;font-size:42px;color:#fff;margin:auto;">⚡</div>
-        <div>
-          <div class="eyebrow">Urgence</div>
-          <h2 style="font-size:clamp(28px,3vw,42px);color:#13285a;">Dépannage électrique urgent à Biguglia, Bastia ou en Haute-Corse ?</h2>
-          <p class="muted" style="margin-top:12px;">AE ELEC intervient rapidement pour les pannes électriques et les situations urgentes qui ne peuvent pas attendre. Contact simple, réponse rapide et prise en charge sérieuse.</p>
-        </div>
-        <div style="display:grid;gap:12px;">
-          <a href="tel:0699441977" class="btn btn-primary">📞 Appeler maintenant</a>
-          <a href="https://wa.me/33699441977" class="btn btn-light">💬 WhatsApp</a>
-        </div>
-      </div>
-    </div>
-  </div>
+<section class="quick-bar">
+<div class="container quick-grid">
+<div class="quick">
+<strong>Réponse rapide</strong>
+<span>Prise de contact simple par téléphone, WhatsApp ou formulaire avec retour rapide selon l’urgence.</span>
+</div>
+<div class="quick">
+<strong>Basé à Biguglia</strong>
+<span>Entreprise locale avec interventions à Bastia, Lucciana, Borgo, Furiani et plus largement en Haute-Corse.</span>
+</div>
+<div class="quick">
+<strong>Devis clair</strong>
+<span>Une réponse compréhensible, structurée et adaptée au besoin réel du client, sans complication inutile.</span>
+</div>
+<div class="quick">
+<strong>Prestations complètes</strong>
+<span>Électricité, climatisation, sécurité, domotique et bornes de recharge pour particuliers et professionnels.</span>
+</div>
+</div>
+</section>
+
+<section class="section-tight" style="background:#fff;">
+<div class="container" style="display:flex; flex-wrap:wrap; gap:20px; justify-content:space-between; text-align:center;">
+<div><strong>Entreprise locale</strong><br><span class="muted">basée à Biguglia</span></div>
+<div><strong>Intervention rapide</strong><br><span class="muted">en Haute-Corse</span></div>
+<div><strong>Particuliers & professionnels</strong><br><span class="muted">accompagnement complet</span></div>
+<div><strong>Travail soigné</strong><br><span class="muted">et suivi sérieux</span></div>
+</div>
+</section>
+
+<section class="section" style="background:#fff3cd;">
+<div class="container" style="text-align:center;">
+<div class="eyebrow">Urgence</div>
+<h2>⚡ Dépannage électrique urgent à Biguglia, Bastia ou en Haute-Corse ?</h2>
+<p class="muted" style="margin-top:10px; max-width:760px; margin-left:auto; margin-right:auto;">AE ELEC intervient rapidement pour les pannes électriques et les situations urgentes qui ne peuvent pas attendre. Contact simple, réponse rapide et prise en charge sérieuse.</p>
+<div style="margin-top:20px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
+<a href="tel:0699441977" class="btn btn-primary">📞 Appeler maintenant</a>
+<a href="https://wa.me/33699441977" class="btn btn-light">💬 WhatsApp</a>
+</div>
+</div>
 </section>
 
 <section class="section" id="prestations">
-  <div class="container">
-    <div class="eyebrow">Prestations</div>
-    <h2>Des prestations complètes pour vos besoins en électricité, sécurité, confort et équipements techniques</h2>
-    <p class="muted" style="margin-top:16px; max-width:860px;">AE ELEC intervient à Biguglia, Bastia et en Haute-Corse pour les travaux d’électricité générale, le dépannage, les bornes de recharge, la climatisation, la domotique et les solutions de sécurité. L’objectif : une installation fiable, un chantier propre et un résultat durable.</p>
-
-    <div class="grid-3">
-      <article class="card">
-        <div class="icon">⚡</div>
-        <h3>Électricité générale</h3>
-        <p>Installation, rénovation, dépannage, tableaux électriques et mise en conformité avec un travail propre, fiable et adapté au logement comme au local professionnel.</p>
-      </article>
-      <article class="card">
-        <div class="icon">🔋</div>
-        <h3>Bornes de recharge</h3>
-        <p>Installation de bornes électriques pour particuliers et professionnels avec accompagnement de la solution jusqu’à la mise en service.</p>
-      </article>
-      <article class="card">
-        <div class="icon">🏠</div>
-        <h3>Domotique</h3>
-        <p>Équipements connectés pour gagner en confort, piloter les installations et moderniser les espaces de vie ou de travail.</p>
-      </article>
-      <article class="card">
-        <div class="icon">📞</div>
-        <h3>Interphone & visiophone</h3>
-        <p>Solutions de contrôle d’accès pour sécuriser l’entrée, améliorer le confort d’utilisation et renforcer la tranquillité au quotidien.</p>
-      </article>
-      <article class="card">
-        <div class="icon">🛡️</div>
-        <h3>Vidéosurveillance & alarme</h3>
-        <p>Installation de systèmes de sécurité pour protéger logements, commerces et locaux professionnels à Biguglia, Bastia et en Haute-Corse.</p>
-      </article>
-      <article class="card">
-        <div class="icon">❄️</div>
-        <h3>Climatisation</h3>
-        <p>Pose, entretien et maintenance de solutions chaud / froid adaptées aux besoins des particuliers comme des professionnels.</p>
-      </article>
-    </div>
-  </div>
+<div class="container">
+<div class="eyebrow">Prestations</div>
+<h2>Des prestations complètes pour vos besoins en électricité, sécurité, confort et équipements techniques</h2>
+<p class="muted" style="margin-top:16px; max-width:860px;">AE ELEC intervient à Biguglia, Bastia et en Haute-Corse pour les travaux d’électricité générale, le dépannage, les bornes de recharge, la climatisation, la domotique et les solutions de sécurité. L’objectif : une installation fiable, un chantier propre et un résultat durable.</p>
+<div class="grid-3">
+<article class="card">
+<div class="icon">⚡</div>
+<h3>Électricité générale</h3>
+<p>Installation, rénovation, dépannage, tableaux électriques et mise en conformité avec un travail propre, fiable et adapté au logement comme au local professionnel.</p>
+</article>
+<article class="card">
+<div class="icon">🔋</div>
+<h3>Bornes de recharge</h3>
+<p>Installation de bornes électriques pour particuliers et professionnels avec accompagnement de la solution jusqu’à la mise en service.</p>
+</article>
+<article class="card">
+<div class="icon">🏠</div>
+<h3>Domotique</h3>
+<p>Équipements connectés pour gagner en confort, piloter les installations et moderniser les espaces de vie ou de travail.</p>
+</article>
+<article class="card">
+<div class="icon">📞</div>
+<h3>Interphone & visiophone</h3>
+<p>Solutions de contrôle d’accès pour sécuriser l’entrée, améliorer le confort d’utilisation et renforcer la tranquillité au quotidien.</p>
+</article>
+<article class="card">
+<div class="icon">🛡️</div>
+<h3>Vidéosurveillance & alarme</h3>
+<p>Installation de systèmes de sécurité pour protéger logements, commerces et locaux professionnels à Biguglia, Bastia et en Haute-Corse.</p>
+</article>
+<article class="card">
+<div class="icon">❄️</div>
+<h3>Climatisation</h3>
+<p>Pose, entretien et maintenance de solutions chaud / froid adaptées aux besoins des particuliers comme des professionnels.</p>
+</article>
+</div>
+</div>
 </section>
 
 <section class="section" id="demandes" style="background:#fff;">
-  <div class="container">
-    <div class="eyebrow">Besoins fréquents</div>
-    <h2>Vous nous contactez souvent pour ce type de demande</h2>
-    <p class="muted" style="margin-top:16px; max-width:860px;">Cette section permet de voir rapidement si AE ELEC peut répondre exactement à votre besoin, que ce soit pour une urgence, une rénovation ou une installation plus technique.</p>
-
-    <div class="grid-3">
-      <div class="card">
-        <h3>Panne ou dépannage urgent</h3>
-        <p>Coupure, problème de tableau, circuit défaillant ou installation qui présente un dysfonctionnement à traiter rapidement.</p>
-      </div>
-      <div class="card">
-        <h3>Rénovation électrique</h3>
-        <p>Remise au propre, remplacement de tableau, reprise de circuits, modernisation de l’installation et mise en conformité.</p>
-      </div>
-      <div class="card">
-        <h3>Installation de climatisation</h3>
-        <p>Pose d’une solution chaud / froid adaptée à votre logement, à vos besoins et à la configuration des lieux.</p>
-      </div>
-      <div class="card">
-        <h3>Borne de recharge</h3>
-        <p>Installation d’une borne électrique pour maison, résidence, commerce ou activité professionnelle.</p>
-      </div>
-      <div class="card">
-        <h3>Alarme et vidéosurveillance</h3>
-        <p>Sécurisation d’un logement, d’un commerce ou d’un local professionnel avec des solutions fiables et adaptées.</p>
-      </div>
-      <div class="card">
-        <h3>Interphone, visiophone, domotique</h3>
-        <p>Amélioration du confort, du contrôle d’accès et de la gestion des équipements au quotidien.</p>
-      </div>
-    </div>
-  </div>
+<div class="container">
+<div class="eyebrow">Besoins fréquents</div>
+<h2>Vous nous contactez souvent pour ce type de demande</h2>
+<p class="muted" style="margin-top:16px; max-width:860px;">Cette section permet de voir rapidement si AE ELEC peut répondre exactement à votre besoin, que ce soit pour une urgence, une rénovation ou une installation plus technique.</p>
+<div class="grid-3">
+<div class="card">
+<h3>Panne ou dépannage urgent</h3>
+<p>Coupure, problème de tableau, circuit défaillant ou installation qui présente un dysfonctionnement à traiter rapidement.</p>
+</div>
+<div class="card">
+<h3>Rénovation électrique</h3>
+<p>Remise au propre, remplacement de tableau, reprise de circuits, modernisation de l’installation et mise en conformité.</p>
+</div>
+<div class="card">
+<h3>Installation de climatisation</h3>
+<p>Pose d’une solution chaud / froid adaptée à votre logement, à vos besoins et à la configuration des lieux.</p>
+</div>
+<div class="card">
+<h3>Borne de recharge</h3>
+<p>Installation d’une borne électrique pour maison, résidence, commerce ou activité professionnelle.</p>
+</div>
+<div class="card">
+<h3>Alarme et vidéosurveillance</h3>
+<p>Sécurisation d’un logement, d’un commerce ou d’un local professionnel avec des solutions fiables et adaptées.</p>
+</div>
+<div class="card">
+<h3>Interphone, visiophone, domotique</h3>
+<p>Amélioration du confort, du contrôle d’accès et de la gestion des équipements au quotidien.</p>
+</div>
+</div>
+</div>
 </section>
 
 <section class="section">
-  <div class="container">
-    <div class="cta">
-      <div>
-        <div class="eyebrow" style="color:#ffd653">Réponse rapide</div>
-        <h2>Un projet ? Une urgence ?</h2>
-        <p>Expliquez votre besoin en quelques secondes. AE ELEC vous recontacte rapidement avec une solution claire, adaptée et sans complication.</p>
-      </div>
-      <div style="display:flex; gap:14px; flex-wrap:wrap;">
-        <a href="#contact" class="btn btn-primary">Demander un devis</a>
-        <a href="tel:0699441977" class="btn btn-outline">Appeler</a>
-      </div>
-    </div>
-  </div>
+<div class="container">
+<div class="cta">
+<div>
+<div class="eyebrow" style="color:#ffd653">Réponse rapide</div>
+<h2>Un projet ? Une urgence ?</h2>
+<p>Expliquez votre besoin en quelques secondes. AE ELEC vous recontacte rapidement avec une solution claire, adaptée et sans complication.</p>
+</div>
+<div style="display:flex; gap:14px; flex-wrap:wrap;">
+<a href="#contact" class="btn btn-primary">Demander un devis</a>
+<a href="tel:0699441977" class="btn btn-outline">Appeler</a>
+</div>
+</div>
+</div>
 </section>
 
 <section class="section band">
-  <div class="container">
-    <div class="eyebrow">Pourquoi nous choisir</div>
-    <h2>Pourquoi faire appel à AE ELEC pour vos travaux électriques en Haute-Corse ?</h2>
-    <div class="reasons">
-      <div class="reason">
-        <strong>Réactivité locale</strong>
-        <p>Entreprise basée à Biguglia avec intervention rapide à Bastia, Lucciana, Borgo, Furiani et plus largement en Haute-Corse.</p>
-      </div>
-      <div class="reason">
-        <strong>Travail propre et finitions soignées</strong>
-        <p>Chaque intervention est réalisée avec sérieux, méthode et propreté pour un résultat net et durable.</p>
-      </div>
-      <div class="reason">
-        <strong>Prestations adaptées aux particuliers et professionnels</strong>
-        <p>Maison, appartement, commerce, bureau ou local professionnel : les solutions sont adaptées au besoin réel du chantier.</p>
-      </div>
-      <div class="reason">
-        <strong>Contact simple et devis clair</strong>
-        <p>Appel, WhatsApp ou formulaire : la prise de contact est rapide et la réponse reste claire, lisible et rassurante.</p>
-      </div>
-    </div>
-  </div>
+<div class="container">
+<div class="eyebrow">Pourquoi nous choisir</div>
+<h2>Pourquoi faire appel à AE ELEC pour vos travaux électriques en Haute-Corse ?</h2>
+<div class="reasons">
+<div class="reason">
+<strong>Réactivité locale</strong>
+<p>Entreprise basée à Biguglia avec intervention rapide à Bastia, Lucciana, Borgo, Furiani et plus largement en Haute-Corse.</p>
+</div>
+<div class="reason">
+<strong>Travail propre et finitions soignées</strong>
+<p>Chaque intervention est réalisée avec sérieux, méthode et propreté pour un résultat net et durable.</p>
+</div>
+<div class="reason">
+<strong>Prestations adaptées aux particuliers et professionnels</strong>
+<p>Maison, appartement, commerce, bureau ou local professionnel : les solutions sont adaptées au besoin réel du chantier.</p>
+</div>
+<div class="reason">
+<strong>Contact simple et devis clair</strong>
+<p>Appel, WhatsApp ou formulaire : la prise de contact est rapide et la réponse reste claire, lisible et rassurante.</p>
+</div>
+</div>
+</div>
 </section>
 
 <section class="section">
-  <div class="container">
-    <div class="eyebrow">Engagement qualité</div>
-    <h2>Un niveau d’exigence élevé sur chaque intervention</h2>
-    <div class="grid-3">
-      <div class="card">
-        <h3>Travail propre</h3>
-        <p>Chaque chantier est réalisé avec soin, propreté et organisation pour garantir un rendu final irréprochable.</p>
-      </div>
-      <div class="card">
-        <h3>Respect des délais annoncés</h3>
-        <p>Les délais communiqués sont pris au sérieux avec un suivi rigoureux du début jusqu’à la fin des travaux.</p>
-      </div>
-      <div class="card">
-        <h3>Accompagnement client</h3>
-        <p>Conseils, explications et suivi : chaque client est accompagné pour comprendre et valider les choix techniques.</p>
-      </div>
-    </div>
-  </div>
+<div class="container">
+<div class="eyebrow">Engagement qualité</div>
+<h2>Un niveau d’exigence élevé sur chaque intervention</h2>
+<div class="grid-3">
+<div class="card">
+<h3>Travail propre</h3>
+<p>Chaque chantier est réalisé avec soin, propreté et organisation pour garantir un rendu final irréprochable.</p>
+</div>
+<div class="card">
+<h3>Respect des délais annoncés</h3>
+<p>Les délais communiqués sont pris au sérieux avec un suivi rigoureux du début jusqu’à la fin des travaux.</p>
+</div>
+<div class="card">
+<h3>Accompagnement client</h3>
+<p>Conseils, explications et suivi : chaque client est accompagné pour comprendre et valider les choix techniques.</p>
+</div>
+</div>
+</div>
 </section>
 
 <section class="section" id="pour-qui">
-  <div class="container">
-    <div class="eyebrow">Pour qui ?</div>
-    <h2>Nous intervenons pour différents types de clients et de besoins</h2>
-    <div class="grid-3">
-      <div class="card">
-        <div class="icon">🏠</div>
-        <h3>Particuliers</h3>
-        <p>Maisons, appartements, rénovations, dépannages, climatisation, sécurité et amélioration du confort électrique au quotidien.</p>
-      </div>
-      <div class="card">
-        <div class="icon">🏢</div>
-        <h3>Professionnels</h3>
-        <p>Commerces, bureaux, locaux professionnels et installations adaptées aux contraintes d’activité, de sécurité et de continuité.</p>
-      </div>
-      <div class="card">
-        <div class="icon">⚙️</div>
-        <h3>Syndics & gestionnaires</h3>
-        <p>Maintenance, dépannage, remises en état et interventions rapides sur les parties communes ou installations collectives.</p>
-      </div>
-    </div>
-  </div>
+<div class="container">
+<div class="eyebrow">Pour qui ?</div>
+<h2>Nous intervenons pour différents types de clients et de besoins</h2>
+<div class="grid-3">
+<div class="card">
+<div class="icon">🏠</div>
+<h3>Particuliers</h3>
+<p>Maisons, appartements, rénovations, dépannages, climatisation, sécurité et amélioration du confort électrique au quotidien.</p>
+</div>
+<div class="card">
+<div class="icon">🏢</div>
+<h3>Professionnels</h3>
+<p>Commerces, bureaux, locaux professionnels et installations adaptées aux contraintes d’activité, de sécurité et de continuité.</p>
+</div>
+<div class="card">
+<div class="icon">⚙️</div>
+<h3>Syndics & gestionnaires</h3>
+<p>Maintenance, dépannage, remises en état et interventions rapides sur les parties communes ou installations collectives.</p>
+</div>
+</div>
+</div>
 </section>
 
 <section class="section" id="realisations">
-  <div class="container">
-    <div class="eyebrow">Réalisations</div>
-    <h2>Quelques exemples de chantiers réalisés à Biguglia, Bastia et en Corse</h2>
-    <p class="muted" style="margin-top:16px; max-width:820px;">Des visuels concrets pour montrer le soin apporté aux installations, à l’éclairage, à la sécurité et aux finitions sur différents types de projets.</p>
-
-    <div class="gallery">
-      <div class="gallery-item">
-        <img src="./images/chantier-1.jpeg" alt="Éclairage intérieur moderne en Haute-Corse">
-        <div class="gallery-caption">Éclairage intérieur</div>
-      </div>
-      <div class="gallery-item">
-        <img src="./images/chantier-2.jpeg" alt="Finition éclairage chantier à Bastia">
-        <div class="gallery-caption">Finition éclairage</div>
-      </div>
-      <div class="gallery-item">
-        <img src="./images/chantier-3.jpeg" alt="Préparation chantier électrique à Biguglia">
-        <div class="gallery-caption">Préparation chantier</div>
-      </div>
-      <div class="gallery-item">
-        <img src="./images/chantier-4.jpeg" alt="Rail spots et finition électrique">
-        <div class="gallery-caption">Rail spots et finition</div>
-      </div>
-      <div class="gallery-item">
-        <img src="./images/chantier-5.jpeg" alt="Rendu final chantier électrique en Corse">
-        <div class="gallery-caption">Rendu final</div>
-      </div>
-      <div class="gallery-item">
-        <img src="./images/chantier-6.jpeg" alt="Installation électrique commerce en Haute-Corse">
-        <div class="gallery-caption">Installation commerce</div>
-      </div>
-    </div>
-  </div>
+<div class="container">
+<div class="eyebrow">Réalisations</div>
+<h2>Quelques exemples de chantiers réalisés à Biguglia, Bastia et en Corse</h2>
+<p class="muted" style="margin-top:16px; max-width:820px;">Des visuels concrets pour montrer le soin apporté aux installations, à l’éclairage, à la sécurité et aux finitions sur différents types de projets.</p>
+<div class="gallery">
+<div class="gallery-item">
+<img src="./images/chantier-1.jpeg" alt="Éclairage intérieur moderne en Haute-Corse">
+<div class="gallery-caption">Éclairage intérieur</div>
+</div>
+<div class="gallery-item">
+<img src="./images/chantier-2.jpeg" alt="Finition éclairage chantier à Bastia">
+<div class="gallery-caption">Finition éclairage</div>
+</div>
+<div class="gallery-item">
+<img src="./images/chantier-3.jpeg" alt="Préparation chantier électrique à Biguglia">
+<div class="gallery-caption">Préparation chantier</div>
+</div>
+<div class="gallery-item">
+<img src="./images/chantier-4.jpeg" alt="Rail spots et finition électrique">
+<div class="gallery-caption">Rail spots et finition</div>
+</div>
+<div class="gallery-item">
+<img src="./images/chantier-5.jpeg" alt="Rendu final chantier électrique en Corse">
+<div class="gallery-caption">Rendu final</div>
+</div>
+<div class="gallery-item">
+<img src="./images/chantier-6.jpeg" alt="Installation électrique commerce en Haute-Corse">
+<div class="gallery-caption">Installation commerce</div>
+</div>
+</div>
+</div>
 </section>
 
 <section class="section" id="avant-apres" style="background:#fff;">
-  <div class="container">
-    <div class="eyebrow">Avant / Après</div>
-    <h2>Des résultats visibles sur chaque chantier</h2>
-    <p class="muted" style="margin-top:16px; max-width:860px;">Une transformation concrète parle souvent plus qu’un long discours. Cette section montre le niveau de finition obtenu après intervention.</p>
+<div class="container">
+<div class="eyebrow">Avant / Après</div>
+<h2>Des résultats visibles sur chaque chantier</h2>
+<p class="muted" style="margin-top:16px; max-width:860px;">Une transformation concrète parle souvent plus qu’un long discours. Cette section montre le niveau de finition obtenu après intervention.</p>
 
-    <div class="before-after-grid">
-      <div class="before-after-card">
-        <div class="before-after-images">
-          <div>
-            <div class="ba-label ba-before">Avant</div>
-            <img src="./images/avant1.jpeg" alt="Avant rénovation tableau électrique">
-          </div>
-          <div>
-            <div class="ba-label ba-after">Après</div>
-            <img src="./images/apres1.jpeg" alt="Après rénovation tableau électrique">
-          </div>
-        </div>
-        <h3>Rénovation d’un tableau électrique</h3>
-        <p>Remise au propre, meilleure lisibilité, installation plus fiable et rendu final nettement plus professionnel.</p>
-      </div>
+<div class="before-after-grid">
+<div class="before-after-card">
+<div class="before-after-images">
+<div>
+<div class="ba-label ba-before">Avant</div>
+<img src="./images/avant1.jpeg" alt="Avant rénovation tableau électrique">
+</div>
+<div>
+<div class="ba-label ba-after">Après</div>
+<img src="./images/apres1.jpeg" alt="Après rénovation tableau électrique">
+</div>
+</div>
+<h3>Rénovation d’un tableau électrique</h3>
+<p>Remise au propre, meilleure lisibilité, installation plus fiable et rendu final nettement plus professionnel.</p>
+</div>
 
-      <div class="before-after-card">
-        <div class="before-after-images">
-          <div>
-            <div class="ba-label ba-before">Avant</div>
-            <img src="./images/avant2.jpeg" alt="Avant mise en conformité électrique">
-          </div>
-          <div>
-            <div class="ba-label ba-after">Après</div>
-            <img src="./images/apres2.jpeg" alt="Après mise en conformité électrique">
-          </div>
-        </div>
-        <h3>Mise en conformité d’une installation</h3>
-        <p>Réorganisation de l’existant, sécurisation de l’installation et intervention soignée pour un résultat durable.</p>
-      </div>
+<div class="before-after-card">
+<div class="before-after-images">
+<div>
+<div class="ba-label ba-before">Avant</div>
+<img src="./images/avant2.jpeg" alt="Avant mise en conformité électrique">
+</div>
+<div>
+<div class="ba-label ba-after">Après</div>
+<img src="./images/apres2.jpeg" alt="Après mise en conformité électrique">
+</div>
+</div>
+<h3>Mise en conformité d’une installation</h3>
+<p>Réorganisation de l’existant, sécurisation de l’installation et intervention soignée pour un résultat durable.</p>
+</div>
 
-      <div class="before-after-card">
-        <div class="before-after-images">
-          <div>
-            <div class="ba-label ba-before">Avant</div>
-            <img src="./images/avant3.jpeg" alt="Avant modernisation éclairage intérieur">
-          </div>
-          <div>
-            <div class="ba-label ba-after">Après</div>
-            <img src="./images/apres3.jpeg" alt="Après modernisation éclairage intérieur">
-          </div>
-        </div>
-        <h3>Modernisation d’un éclairage intérieur</h3>
-        <p>Un rendu plus propre, plus moderne et plus cohérent avec les attentes du client après intervention.</p>
-      </div>
-    </div>
-  </div>
+<div class="before-after-card">
+<div class="before-after-images">
+<div>
+<div class="ba-label ba-before">Avant</div>
+<img src="./images/avant3.jpeg" alt="Avant modernisation éclairage intérieur">
+</div>
+<div>
+<div class="ba-label ba-after">Après</div>
+<img src="./images/apres3.jpeg" alt="Après modernisation éclairage intérieur">
+</div>
+</div>
+<h3>Modernisation d’un éclairage intérieur</h3>
+<p>Un rendu plus propre, plus moderne et plus cohérent avec les attentes du client après intervention.</p>
+</div>
+</div>
+</div>
 </section>
 
 <section class="section" id="zones">
-  <div class="container">
-    <div class="eyebrow">Zone d’intervention</div>
-    <h2>AE ELEC intervient à Biguglia, Bastia, Lucciana, Borgo, Furiani et en Haute-Corse</h2>
-    <p class="muted" style="margin-top:16px; max-width:900px;">Basé à Biguglia, AE ELEC intervient rapidement à Bastia, Lucciana, Borgo, Furiani, dans toute la Haute-Corse et plus largement sur l’ensemble de la Corse selon les besoins du chantier. Que ce soit pour un dépannage électrique, une rénovation, une installation de climatisation, de borne de recharge, d’alarme ou de domotique, l’intervention est adaptée à votre projet.</p>
-  </div>
+<div class="container">
+<div class="eyebrow">Zone d’intervention</div>
+<h2>AE ELEC intervient à Biguglia, Bastia, Lucciana, Borgo, Furiani et en Haute-Corse</h2>
+<p class="muted" style="margin-top:16px; max-width:900px;">Basé à Biguglia, AE ELEC intervient rapidement à Bastia, Lucciana, Borgo, Furiani, dans toute la Haute-Corse et plus largement sur l’ensemble de la Corse selon les besoins du chantier. Que ce soit pour un dépannage électrique, une rénovation, une installation de climatisation, de borne de recharge, d’alarme ou de domotique, l’intervention est adaptée à votre projet.</p>
+</div>
 </section>
 
 <section class="section" id="avis">
-  <div class="container">
-    <div class="eyebrow">Avis clients</div>
-    <h2>Ils nous font confiance à Biguglia, Bastia et en Haute-Corse</h2>
-    <p class="muted" style="margin-top:16px; max-width:860px;">AE ELEC accorde une grande importance à la qualité d’exécution, à la propreté du chantier et au sérieux du suivi. Les retours clients rassurent avant la prise de contact et renforcent la crédibilité de l’entreprise.</p>
+<div class="container">
+<div class="eyebrow">Avis clients</div>
+<h2>Ils nous font confiance à Biguglia, Bastia et en Haute-Corse</h2>
+<p class="muted" style="margin-top:16px; max-width:860px;">
+AE ELEC accorde une grande importance à la qualité d’exécution, à la propreté du chantier et au sérieux du suivi. Les retours clients rassurent avant la prise de contact et renforcent la crédibilité de l’entreprise.
+</p>
 
-    <div class="grid-3" style="margin-top:28px;">
-      <div class="card">
-        <div class="icon">⭐</div>
-        <h3>Panne réglée rapidement</h3>
-        <p>Très bon contact, intervention rapide et chantier laissé propre après passage. Travail sérieux du début à la fin.</p>
-        <strong>— Client à Bastia</strong>
-      </div>
+<div class="grid-3" style="margin-top:28px;">
+<div class="card">
+<div class="icon">⭐</div>
+<h3>Panne réglée rapidement</h3>
+<p>Très bon contact, intervention rapide et chantier laissé propre après passage. Travail sérieux du début à la fin.</p>
+<strong>— Client à Bastia</strong>
+</div>
 
-      <div class="card">
-        <div class="icon">⭐</div>
-        <h3>Installation soignée</h3>
-        <p>Explications claires, travail propre et résultat net. On sent tout de suite le sérieux dans la manière de travailler.</p>
-        <strong>— Client à Biguglia</strong>
-      </div>
+<div class="card">
+<div class="icon">⭐</div>
+<h3>Installation soignée</h3>
+<p>Explications claires, travail propre et résultat net. On sent tout de suite le sérieux dans la manière de travailler.</p>
+<strong>— Client à Biguglia</strong>
+</div>
 
-      <div class="card">
-        <div class="icon">⭐</div>
-        <h3>Entreprise réactive</h3>
-        <p>Devis rapide, bon suivi et intervention efficace. Très satisfait du rendu final et de la qualité du service.</p>
-        <strong>— Client en Haute-Corse</strong>
-      </div>
-    </div>
+<div class="card">
+<div class="icon">⭐</div>
+<h3>Entreprise réactive</h3>
+<p>Devis rapide, bon suivi et intervention efficace. Très satisfait du rendu final et de la qualité du service.</p>
+<strong>— Client en Haute-Corse</strong>
+</div>
+</div>
 
-    <div style="display:flex; gap:14px; flex-wrap:wrap; margin-top:24px;">
-      <a href="https://www.google.com/search?q=AE+ELEC+Biguglia" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Voir les avis Google</a>
-      <a href="#contact" class="btn btn-light">Nous contacter</a>
-    </div>
-  </div>
+<div style="display:flex; gap:14px; flex-wrap:wrap; margin-top:24px;">
+<a href="https://www.google.com/search?q=AE+ELEC+Biguglia" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Voir les avis Google</a>
+<a href="#contact" class="btn btn-light">Nous contacter</a>
+</div>
+</div>
 </section>
 
 <section class="section" id="process">
-  <div class="container">
-    <div class="eyebrow">Process</div>
-    <h2>Un fonctionnement simple, fluide et rassurant</h2>
-    <div class="process">
-      <div class="step">
-        <div class="number">1</div>
-        <h3>Prise de contact</h3>
-        <p>Échange rapide pour comprendre le besoin, la localisation, le niveau d’urgence et le type d’intervention à prévoir.</p>
-      </div>
-      <div class="step">
-        <div class="number">2</div>
-        <h3>Analyse du besoin</h3>
-        <p>Étude de la demande pour proposer une solution cohérente, fiable et adaptée à la réalité du chantier.</p>
-      </div>
-      <div class="step">
-        <div class="number">3</div>
-        <h3>Devis clair</h3>
-        <p>Une proposition lisible et compréhensible, sans complication inutile, pour avancer rapidement et sereinement.</p>
-      </div>
-      <div class="step">
-        <div class="number">4</div>
-        <h3>Intervention soignée</h3>
-        <p>Un travail propre, suivi avec sérieux, jusqu’au rendu final et à la satisfaction du client.</p>
-      </div>
-    </div>
-  </div>
+<div class="container">
+<div class="eyebrow">Process</div>
+<h2>Un fonctionnement simple, fluide et rassurant</h2>
+<div class="process">
+<div class="step">
+<div class="number">1</div>
+<h3>Prise de contact</h3>
+<p>Échange rapide pour comprendre le besoin, la localisation, le niveau d’urgence et le type d’intervention à prévoir.</p>
+</div>
+<div class="step">
+<div class="number">2</div>
+<h3>Analyse du besoin</h3>
+<p>Étude de la demande pour proposer une solution cohérente, fiable et adaptée à la réalité du chantier.</p>
+</div>
+<div class="step">
+<div class="number">3</div>
+<h3>Devis clair</h3>
+<p>Une proposition lisible et compréhensible, sans complication inutile, pour avancer rapidement et sereinement.</p>
+</div>
+<div class="step">
+<div class="number">4</div>
+<h3>Intervention soignée</h3>
+<p>Un travail propre, suivi avec sérieux, jusqu’au rendu final et à la satisfaction du client.</p>
+</div>
+</div>
+</div>
 </section>
 
 <section class="section">
-  <div class="container">
-    <div class="cta">
-      <div>
-        <div class="eyebrow" style="color:#ffd653">Besoin d’un devis ?</div>
-        <h2>Obtenez un devis rapide et une intervention fiable</h2>
-        <p>Expliquez votre besoin en quelques secondes. AE ELEC vous recontacte rapidement avec une solution claire et adaptée.</p>
-      </div>
-      <div style="display:flex; gap:14px; flex-wrap:wrap;">
-        <a href="tel:0699441977" class="btn btn-primary">📞 Appeler maintenant</a>
-        <a href="https://wa.me/33699441977" class="btn btn-outline">💬 WhatsApp</a>
-        <a href="#contact" class="btn btn-light">Demander un devis</a>
-      </div>
-    </div>
-  </div>
+<div class="container">
+<div class="cta">
+<div>
+<div class="eyebrow" style="color:#ffd653">Besoin d’un devis ?</div>
+<h2>Obtenez un devis rapide et une intervention fiable</h2>
+<p>Expliquez votre besoin en quelques secondes. AE ELEC vous recontacte rapidement avec une solution claire et adaptée.</p>
+</div>
+<div style="display:flex; gap:14px; flex-wrap:wrap;">
+<a href="tel:0699441977" class="btn btn-primary">📞 Appeler maintenant</a>
+<a href="https://wa.me/33699441977" class="btn btn-outline">💬 WhatsApp</a>
+<a href="#contact" class="btn btn-light">Demander un devis</a>
+</div>
+</div>
+</div>
 </section>
 
 <section class="section" style="background:#0b4f9c;color:#fff;text-align:center;">
-  <div class="container">
-    <h2>Besoin d’un électricien fiable à Biguglia ou Bastia ?</h2>
-    <p style="margin-top:10px; color:#dde7f3;">Intervention rapide • Travail soigné • Devis clair</p>
-    <div style="margin-top:20px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
-      <a href="tel:0699441977" class="btn btn-primary">📞 Appeler maintenant</a>
-      <a href="https://wa.me/33699441977" class="btn btn-outline">💬 WhatsApp</a>
-      <a href="#contact" class="btn btn-light">Demander un devis</a>
-    </div>
-  </div>
+<div class="container">
+<h2>Besoin d’un électricien fiable à Biguglia ou Bastia ?</h2>
+<p style="margin-top:10px; color:#dde7f3;">Intervention rapide • Travail soigné • Devis clair</p>
+<div style="margin-top:20px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
+<a href="tel:0699441977" class="btn btn-primary">📞 Appeler maintenant</a>
+<a href="https://wa.me/33699441977" class="btn btn-outline">💬 WhatsApp</a>
+<a href="#contact" class="btn btn-light">Demander un devis</a>
+</div>
+</div>
 </section>
 
 <section class="section" id="contact">
-  <div class="container">
-    <div class="eyebrow">Contact</div>
-    <h2>Parlons de votre projet</h2>
-    <div class="contact-grid">
-      <div class="info-list">
-        <div class="info">
-          <strong>Adresse</strong>
-          <span>ZI de Tragone, 20620 Biguglia</span>
-        </div>
-        <div class="info">
-          <strong>Email</strong>
-          <a href="mailto:Aeelecbastia@gmail.com">Aeelecbastia@gmail.com</a>
-        </div>
-        <div class="info">
-          <strong>Téléphone Bilal Amakri</strong>
-          <a href="tel:0699441977">06 99 44 19 77</a>
-        </div>
-        <div class="info">
-          <strong>Téléphone Ilyas El aazri</strong>
-          <a href="tel:0650172302">06 50 17 23 02</a>
-        </div>
-        <div class="info">
-          <strong>Disponibilité</strong>
-          <span>24h/24 et 7j/7</span>
-        </div>
-        <div class="info">
-          <strong>Zone couverte</strong>
-          <span>Biguglia, Bastia, Lucciana, Borgo, Furiani, Haute-Corse et toute la Corse</span>
-        </div>
-        <div class="info">
-          <strong>Réseaux sociaux</strong>
-          <span>Instagram : Ae.elec<br>Facebook : AE Elec</span>
-        </div>
+<div class="container">
+<div class="eyebrow">Contact</div>
+<h2>Parlons de votre projet</h2>
+<div class="contact-grid">
+<div class="info-list">
+<div class="info">
+<strong>Adresse</strong>
+<span>ZI de Tragone, 20620 Biguglia</span>
+</div>
+<div class="info">
+<strong>Email</strong>
+<a href="mailto:Aeelecbastia@gmail.com">Aeelecbastia@gmail.com</a>
+</div>
+<div class="info">
+<strong>Téléphone Bilal Amakri</strong>
+<a href="tel:0699441977">06 99 44 19 77</a>
+</div>
+<div class="info">
+<strong>Téléphone Ilyas El aazri</strong>
+<a href="tel:0650172302">06 50 17 23 02</a>
+</div>
+<div class="info">
+<strong>Disponibilité</strong>
+<span>24h/24 et 7j/7</span>
+</div>
+<div class="info">
+<strong>Zone couverte</strong>
+<span>Biguglia, Bastia, Lucciana, Borgo, Furiani, Haute-Corse et toute la Corse</span>
+</div>
+<div class="info">
+<strong>Réseaux sociaux</strong>
+<span>Instagram : Ae.elec<br>Facebook : AE Elec</span>
+</div>
 
-        <div class="map-wrap">
-          <iframe
-          src="https://www.google.com/maps?q=ZI+de+Tragone+20620+Biguglia&output=embed"
-          width="100%"
-          height="260"
-          style="border:0;"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-      </div>
+<div class="map-wrap">
+<iframe
+src="https://www.google.com/maps?q=ZI+de+Tragone+20620+Biguglia&output=embed"
+width="100%"
+height="260"
+style="border:0;"
+allowfullscreen=""
+loading="lazy"
+referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+</div>
+</div>
 
-      <div class="contact-card">
-        <form
-        name="demande-devis"
-        method="POST"
-        data-netlify="true"
-        netlify-honeypot="bot-field"
-        onsubmit="showMessage(event)">
-          <input type="hidden" name="form-name" value="demande-devis" />
+<div class="contact-card">
+<form
+name="demande-devis"
+method="POST"
+data-netlify="true"
+netlify-honeypot="bot-field"
+onsubmit="showMessage(event)"
+>
+<input type="hidden" name="form-name" value="demande-devis" />
 
-          <p style="display:none;">
-            <label>Ne pas remplir :
-              <input name="bot-field" />
-            </label>
-          </p>
+<p style="display:none;">
+<label>Ne pas remplir :
+<input name="bot-field" />
+</label>
+</p>
 
-          <input type="text" name="nom" placeholder="Nom" required />
-          <input type="tel" name="telephone" placeholder="Téléphone" required />
-          <input type="email" name="email" placeholder="Email" required />
-          <input type="text" name="ville" placeholder="Ville / Commune" required />
+<input type="text" name="nom" placeholder="Nom" required />
+<input type="tel" name="telephone" placeholder="Téléphone" required />
+<input type="email" name="email" placeholder="Email" required />
+<input type="text" name="ville" placeholder="Ville / Commune" required />
 
-          <select name="type-demande" required>
-            <option value="">Type de demande</option>
-            <option>Dépannage électrique</option>
-            <option>Rénovation électrique</option>
-            <option>Mise en conformité</option>
-            <option>Climatisation</option>
-            <option>Borne de recharge</option>
-            <option>Alarme / Vidéosurveillance</option>
-            <option>Interphone / Visiophone</option>
-            <option>Domotique</option>
-            <option>Autre</option>
-          </select>
+<select name="type-demande" required>
+<option value="">Type de demande</option>
+<option>Dépannage électrique</option>
+<option>Rénovation électrique</option>
+<option>Mise en conformité</option>
+<option>Climatisation</option>
+<option>Borne de recharge</option>
+<option>Alarme / Vidéosurveillance</option>
+<option>Interphone / Visiophone</option>
+<option>Domotique</option>
+<option>Autre</option>
+</select>
 
-          <select name="urgence" required>
-            <option value="">Niveau d’urgence</option>
-            <option>Urgent</option>
-            <option>Dans les prochains jours</option>
-            <option>Pas urgent</option>
-          </select>
+<select name="urgence" required>
+<option value="">Niveau d’urgence</option>
+<option>Urgent</option>
+<option>Dans les prochains jours</option>
+<option>Pas urgent</option>
+</select>
 
-          <textarea name="message" placeholder="Décrivez votre projet ou votre besoin" required></textarea>
+<textarea name="message" placeholder="Décrivez votre projet ou votre besoin" required></textarea>
 
-          <button type="submit" class="btn btn-primary">Envoyer la demande</button>
-        </form>
+<button type="submit" class="btn btn-primary">Envoyer la demande</button>
+</form>
 
-        <div id="confirmation-message">
-          <strong style="color:#0b4f9c; font-size:18px;">Votre demande a bien été transmise ✓</strong>
-          <p style="margin-top:12px; color:#142033; line-height:1.6;">
-            Merci pour votre confiance.<br><br>
-            L’équipe <strong>AE ELEC</strong> va étudier votre demande avec attention afin de vous proposer une solution adaptée à votre besoin.<br><br>
-            Nous reviendrons vers vous rapidement pour faire le point ensemble.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
+<div id="confirmation-message">
+<strong style="color:#0b4f9c; font-size:18px;">
+Votre demande a bien été transmise ✓
+</strong>
+
+<p style="margin-top:12px; color:#142033; line-height:1.6;">
+Merci pour votre confiance.<br><br>
+L’équipe <strong>AE ELEC</strong> va étudier votre demande avec attention afin de vous proposer une solution adaptée à votre besoin.<br><br>
+Nous reviendrons vers vous rapidement pour faire le point ensemble.
+</p>
+</div>
+</div>
+</div>
+</div>
 </section>
 
 <footer class="footer">
-  <div class="container">
-    <img src="./images/logo.jpeg" alt="AE ELEC">
-    <p><strong>AE ELEC</strong> — Électricité générale à Biguglia, Bastia et en Haute-Corse</p>
-    <p style="margin-top:8px;">
-      ZI de Tragone, 20620 Biguglia<br>
-      06 99 44 19 77 · 06 50 17 23 02<br>
-      Email : Aeelecbastia@gmail.com
-    </p>
-    <p style="margin-top:12px; font-size:13px;">
-      © AE ELEC — Tous droits réservés · Électricien Biguglia · Bastia · Haute-Corse · Corse
-    </p>
-  </div>
+<div class="container">
+<img src="./images/logo.jpeg" alt="AE ELEC">
+<p><strong>AE ELEC</strong> — Électricité générale à Biguglia, Bastia et en Haute-Corse</p>
+<p style="margin-top:8px;">
+ZI de Tragone, 20620 Biguglia<br>
+06 99 44 19 77 · 06 50 17 23 02<br>
+Email : Aeelecbastia@gmail.com
+</p>
+<p style="margin-top:12px; font-size:13px;">
+© AE ELEC — Tous droits réservés · Électricien Biguglia · Bastia · Haute-Corse · Corse
+</p>
+</div>
 </footer>
 
 <a href="https://wa.me/33699441977" target="_blank" class="whatsapp-float">💬 WhatsApp</a>
 
 <div class="mobile-bar">
-  <a href="tel:0699441977" class="call-btn">📞 Appeler</a>
-  <a href="https://wa.me/33699441977" class="wa-btn">WhatsApp</a>
+<a href="tel:0699441977" class="call-btn">📞 Appeler</a>
+<a href="https://wa.me/33699441977" class="wa-btn">WhatsApp</a>
 </div>
 
 <script>
