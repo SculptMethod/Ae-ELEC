@@ -334,20 +334,35 @@ background:linear-gradient(180deg, rgba(6,40,79,.08) 0%, rgba(6,40,79,.52) 100%)
 position:relative;
 z-index:2;
 margin:24px;
-background:rgba(255,255,255,.96);
-border:1px solid rgba(255,255,255,.6);
-border-radius:22px;
+width:280px;
+background:rgba(255,255,255,.97);
+border:1px solid rgba(255,255,255,.7);
+border-radius:24px;
 padding:18px;
-box-shadow:0 18px 40px rgba(0,0,0,.14);
-max-width:260px;
+box-shadow:0 18px 40px rgba(0,0,0,.16);
+backdrop-filter:blur(10px);
 }
 
-.hero-logo-card img{
+.hero-logo-frame{
 width:100%;
-max-width:170px;
-margin:0 auto 12px;
+height:150px;
+display:flex;
+align-items:center;
+justify-content:center;
+background:#fff;
+border:1px solid rgba(8,57,111,.08);
+border-radius:18px;
+padding:18px;
+overflow:hidden;
+}
+
+.hero-logo-frame img{
+max-width:100%;
+max-height:100%;
+width:auto;
 height:auto;
 object-fit:contain;
+object-position:center;
 }
 
 .hero-logo-card strong{
@@ -356,6 +371,7 @@ text-align:center;
 font-size:20px;
 color:var(--blue-dark);
 line-height:1.05;
+margin-top:14px;
 }
 
 .hero-logo-card span{
@@ -914,17 +930,18 @@ justify-content:flex-start;
 
 .hero-logo-card{
 margin:16px;
-max-width:220px;
+width:220px;
 padding:14px;
 }
 
-.hero-logo-card img{
-max-width:130px;
-margin:0 auto 10px;
+.hero-logo-frame{
+height:120px;
+padding:14px;
 }
 
 .hero-logo-card strong{
 font-size:18px;
+margin-top:12px;
 }
 
 .hero-logo-card span{
@@ -1047,9 +1064,11 @@ padding-bottom:76px;
 <div class="hero-visual-overlay"></div>
 
 <div class="hero-logo-card">
-<img src="./images/logo.jpeg" alt="Logo AE ELEC">
-<strong>AE ELEC</strong>
-<span>Électricité générale en Haute-Corse</span>
+  <div class="hero-logo-frame">
+    <img src="./images/logo.jpeg" alt="Logo AE ELEC">
+  </div>
+  <strong>AE ELEC</strong>
+  <span>Électricité générale en Haute-Corse</span>
 </div>
 
 <div class="hero-badge">Installation propre • Finitions soignées • Réactivité locale</div>
