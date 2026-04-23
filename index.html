@@ -28,7 +28,19 @@
   "priceRange": "€€"
 }
 </script>
-
+.hero-logo-overlay{
+position:absolute;
+z-index:2;
+left:50%;
+bottom:26px;
+transform:translateX(-50%);
+width:78%;
+max-width:none;
+height:auto;
+object-fit:contain;
+filter:drop-shadow(0 16px 30px rgba(0,0,0,.18));
+pointer-events:none;
+}
 <style>
 :root{
 --blue:#0b4f9c;
@@ -1045,11 +1057,7 @@ padding-bottom:76px;
 <img class="hero-visual-bg" src="./images/hero-photo.jpeg" alt="Intervention AE ELEC sur chantier en Haute-Corse">
 <div class="hero-visual-overlay"></div>
 
-<div class="hero-logo-card">
-  <div class="hero-logo-frame">
-    <img class="hero-logo-image" src="./images/logo.jpeg" alt="Logo AE ELEC">
-  </div>
-</div>
+<img class="hero-logo-overlay" src="./images/logo.jpeg" alt="Logo AE ELEC">
 <div class="hero-badge">Installation propre • Finitions soignées • Réactivité locale</div>
 </div>
 </div>
