@@ -334,18 +334,15 @@ background:linear-gradient(180deg, rgba(6,40,79,.08) 0%, rgba(6,40,79,.52) 100%)
 position:relative;
 z-index:2;
 margin:24px;
-width:260px;
-height:180px;
-background:rgba(255,255,255,.94);
+width:270px;
+height:185px;
+background:rgba(255,255,255,.96);
 border:1px solid rgba(255,255,255,.55);
 border-radius:24px;
 padding:0;
 box-shadow:0 18px 40px rgba(0,0,0,.16);
 backdrop-filter:blur(10px);
 overflow:hidden;
-display:flex;
-align-items:center;
-justify-content:center;
 }
 
 .hero-logo-frame{
@@ -353,22 +350,19 @@ position:relative;
 width:100%;
 height:100%;
 overflow:hidden;
-display:flex;
-align-items:center;
-justify-content:center;
-background:transparent;
 border-radius:24px;
+background:transparent;
 }
 
 .hero-logo-image{
 position:absolute;
-height:155%;
-width:auto;
-max-width:none;
-display:block;
 left:50%;
 top:50%;
-transform:translate(-50%, -47%);
+width:160%;
+height:auto;
+max-width:none;
+transform:translate(-50%, -50%);
+clip-path:inset(20% 6% 22% 6%);
 }
 
 .hero-badge{
@@ -1056,7 +1050,6 @@ padding-bottom:76px;
     <img class="hero-logo-image" src="./images/logo.jpeg" alt="Logo AE ELEC">
   </div>
 </div>
-
 <div class="hero-badge">Installation propre • Finitions soignées • Réactivité locale</div>
 </div>
 </div>
