@@ -742,6 +742,83 @@ box-shadow:var(--shadow);
 background:#fff;
 }
 
+.review-highlight{
+background:#fff;
+border:1px solid var(--line);
+border-radius:26px;
+padding:28px;
+box-shadow:var(--shadow);
+margin-top:28px;
+display:grid;
+grid-template-columns:1.1fr .9fr;
+gap:22px;
+align-items:center;
+}
+
+.review-highlight-box{
+background:linear-gradient(135deg, #0b4f9c 0%, #08396f 100%);
+color:#fff;
+border-radius:22px;
+padding:24px;
+}
+
+.review-highlight-box p{
+color:#dbe6f2;
+margin-top:10px;
+}
+
+.review-form-card{
+background:#fff;
+border:1px solid var(--line);
+border-radius:24px;
+padding:28px;
+box-shadow:var(--shadow);
+margin-top:28px;
+}
+
+.stars-row{
+display:flex;
+gap:8px;
+flex-wrap:wrap;
+}
+
+.star-option{
+flex:1;
+min-width:44px;
+}
+
+.star-option input{
+display:none;
+}
+
+.star-option label{
+display:flex;
+align-items:center;
+justify-content:center;
+padding:12px 8px;
+border-radius:12px;
+border:1px solid #d3dae3;
+background:#fafbfc;
+font-weight:800;
+cursor:pointer;
+transition:.2s ease;
+}
+
+.star-option input:checked + label{
+background:#fff6d1;
+border-color:#f4c415;
+color:#7a5d00;
+}
+
+.review-note{
+font-size:14px;
+color:var(--muted);
+background:#f8fbff;
+border:1px solid #dbe8f8;
+padding:14px 16px;
+border-radius:14px;
+}
+
 .whatsapp-float{
 position:fixed;
 bottom:90px;
@@ -789,7 +866,8 @@ background:var(--blue);
 color:#fff;
 }
 
-#confirmation-message{
+#confirmation-message,
+#review-confirmation-message{
 display:none;
 margin-top:20px;
 padding:20px;
@@ -990,7 +1068,8 @@ color:#142033;
 @media (max-width: 1050px){
 .hero-grid,
 .cta,
-.contact-grid{
+.contact-grid,
+.review-highlight{
 grid-template-columns:1fr;
 }
 
@@ -1075,7 +1154,8 @@ text-align:center;
 .cta,
 .reasons,
 .before-after-grid,
-.hero-proof{
+.hero-proof,
+.review-highlight{
 grid-template-columns:1fr !important;
 }
 
@@ -1125,7 +1205,8 @@ text-align:center;
 .info,
 .contact-card,
 .gallery-item,
-.before-after-card{
+.before-after-card,
+.review-form-card{
 width:100%;
 min-width:0;
 }
@@ -1190,6 +1271,10 @@ width:100%;
 
 .btn{
 width:100%;
+}
+
+.stars-row{
+grid-template-columns:repeat(5,1fr);
 }
 
 .whatsapp-float{
@@ -1276,6 +1361,7 @@ width:100%;
 <a href="#avis">Avis</a>
 <a href="#faq">FAQ</a>
 <a href="#contact">Contact</a>
+<a href="#review-form" class="btn btn-light">Laisser un avis</a>
 <a href="#contact" class="btn btn-primary">Demander un devis</a>
 </nav>
 </div>
@@ -1679,7 +1765,7 @@ Vous recherchez un électricien à Biguglia, Bastia, Lucciana, Borgo, Furiani ou
 <div class="container">
 <div class="eyebrow">Avis clients</div>
 <h2>Des retours qui rassurent avant la prise de contact</h2>
-<p class="muted" style="margin-top:16px; max-width:860px;">AE ELEC accorde une grande importance à la qualité d’exécution, à la propreté du chantier et au sérieux du suivi. Les avis clients jouent un rôle clé pour rassurer et déclencher un appel ou une demande de devis.</p>
+<p class="muted" style="margin-top:16px; max-width:860px;">AE ELEC accorde une grande importance à la qualité d’exécution, à la propreté du chantier et au sérieux du suivi. Les avis publiés sur cette page sont sélectionnés et vérifiés avant mise en ligne.</p>
 
 <div class="grid-3" style="margin-top:28px;">
 <div class="card">
@@ -1704,9 +1790,99 @@ Vous recherchez un électricien à Biguglia, Bastia, Lucciana, Borgo, Furiani ou
 </div>
 </div>
 
-<div style="display:flex; gap:14px; flex-wrap:wrap; margin-top:24px;">
-<a href="https://www.google.com/search?q=AE+ELEC+Biguglia" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Voir les avis Google</a>
-<a href="#contact" class="btn btn-light">Nous contacter</a>
+<div class="review-highlight">
+<div class="review-highlight-box">
+<div class="eyebrow" style="color:#ffd653;">Votre retour compte</div>
+<h3 style="color:#fff; font-size:28px; line-height:1.1;">Vous avez fait appel à AE ELEC ?</h3>
+<p>Laissez votre avis directement sur le site. Chaque retour est reçu, relu et validé avant publication pour garantir un espace propre, sérieux et représentatif du travail réalisé.</p>
+<div style="margin-top:18px;">
+<a href="#review-form" class="btn btn-primary">Laisser un avis</a>
+</div>
+</div>
+
+<div class="card" style="margin:0;">
+<h3>Comment ça fonctionne ?</h3>
+<p>Vous envoyez votre retour via le formulaire ci-dessous. L’entreprise le reçoit, le vérifie, puis décide de le publier, de le modifier ou de le supprimer si nécessaire. Cela permet de garder un espace d’avis maîtrisé et professionnel.</p>
+</div>
+</div>
+
+<div class="review-form-card" id="review-form">
+<div class="form-note">Avis libre • Vérification avant publication • Contrôle total par l’entreprise</div>
+<p style="margin-top:14px; color:#667487;">
+Vous pouvez laisser votre avis directement ici. Il sera transmis à AE ELEC puis vérifié avant toute éventuelle publication sur le site.
+</p>
+
+<form
+name="avis-client"
+method="POST"
+data-netlify="true"
+netlify-honeypot="bot-field"
+onsubmit="showReviewMessage(event)"
+>
+<input type="hidden" name="form-name" value="avis-client" />
+
+<p style="display:none;">
+<label>Ne pas remplir :
+<input name="bot-field" />
+</label>
+</p>
+
+<input type="text" name="nom" placeholder="Prénom ou nom" required />
+<input type="text" name="ville" placeholder="Ville / Commune" required />
+
+<div>
+<label style="display:block; font-weight:700; margin-bottom:8px; color:#142033;">Votre note</label>
+<div class="stars-row">
+<div class="star-option">
+<input type="radio" id="note5" name="note" value="5 étoiles" required>
+<label for="note5">5 ★</label>
+</div>
+<div class="star-option">
+<input type="radio" id="note4" name="note" value="4 étoiles">
+<label for="note4">4 ★</label>
+</div>
+<div class="star-option">
+<input type="radio" id="note3" name="note" value="3 étoiles">
+<label for="note3">3 ★</label>
+</div>
+<div class="star-option">
+<input type="radio" id="note2" name="note" value="2 étoiles">
+<label for="note2">2 ★</label>
+</div>
+<div class="star-option">
+<input type="radio" id="note1" name="note" value="1 étoile">
+<label for="note1">1 ★</label>
+</div>
+</div>
+</div>
+
+<input type="text" name="titre-avis" placeholder="Titre de votre avis" required />
+<textarea name="message" placeholder="Décrivez votre retour après l’intervention" required></textarea>
+
+<div class="review-note">
+Votre avis est envoyé directement à l’entreprise. Il ne sera pas publié automatiquement et pourra être validé, modifié, masqué ou supprimé avant mise en ligne.
+</div>
+
+<label style="font-size:14px; color:#667487; display:flex; gap:10px; align-items:flex-start;">
+<input type="checkbox" required style="width:auto; margin-top:4px;">
+<span>J’accepte que mon avis soit transmis à AE ELEC et éventuellement publié après vérification.</span>
+</label>
+
+<button type="submit" class="btn btn-primary">Envoyer mon avis</button>
+<p style="font-size:13px; color:#667487; margin-top:2px;">
+Votre retour sera reçu par l’entreprise puis traité manuellement avant toute publication.
+</p>
+</form>
+
+<div id="review-confirmation-message">
+<strong style="color:#0b4f9c; font-size:18px;">
+Votre avis a bien été transmis ✓
+</strong>
+<p style="margin-top:12px; color:#142033; line-height:1.6;">
+Merci d’avoir pris le temps de laisser votre retour.<br><br>
+L’équipe <strong>AE ELEC</strong> a bien reçu votre avis. Il sera relu avant toute éventuelle publication sur le site.
+</p>
+</div>
 </div>
 </div>
 </section>
@@ -1997,6 +2173,7 @@ Nous reviendrons vers vous rapidement pour faire le point ensemble.
           <a href="#preuves">Pourquoi nous</a>
           <a href="#realisations">Réalisations</a>
           <a href="#avis">Avis clients</a>
+          <a href="#review-form">Laisser un avis</a>
           <a href="#faq">FAQ</a>
           <a href="#contact">Demander un devis</a>
         </div>
@@ -2042,6 +2219,25 @@ function showMessage(event) {
   .then(() => {
     form.style.display = "none";
     document.getElementById("confirmation-message").style.display = "block";
+  })
+  .catch(() => {
+    alert("Une erreur est survenue. Veuillez réessayer.");
+  });
+}
+
+function showReviewMessage(event) {
+  event.preventDefault();
+
+  const form = event.target;
+  const data = new FormData(form);
+
+  fetch("/", {
+    method: "POST",
+    body: data
+  })
+  .then(() => {
+    form.style.display = "none";
+    document.getElementById("review-confirmation-message").style.display = "block";
   })
   .catch(() => {
     alert("Une erreur est survenue. Veuillez réessayer.");
