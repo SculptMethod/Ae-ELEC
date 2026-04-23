@@ -1,33 +1,213 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<title>Cookies - AE ELEC</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Politique de cookies - AE ELEC</title>
+<meta name="description" content="Politique de cookies du site AE ELEC." />
+<style>
+:root{
+--blue:#0b4f9c;
+--blue-dark:#08396f;
+--yellow:#f4c415;
+--bg:#eef2f6;
+--text:#142033;
+--muted:#667487;
+--line:#d8dee6;
+--shadow:0 18px 46px rgba(8,57,111,.10);
+--radius:22px;
+--max:980px;
+}
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:var(--bg);
+color:var(--text);
+line-height:1.7;
+}
+a{text-decoration:none;color:inherit}
+.container{
+width:min(var(--max), calc(100% - 28px));
+margin:0 auto;
+}
+.topbar{
+background:linear-gradient(135deg, #0b4f9c 0%, #08396f 100%);
+color:#fff;
+padding:18px 0;
+}
+.topbar-inner{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:16px;
+}
+.brand{
+display:flex;
+align-items:center;
+gap:12px;
+}
+.brand img{
+width:56px;
+height:56px;
+object-fit:contain;
+background:#fff;
+padding:8px;
+border-radius:14px;
+}
+.brand strong{
+display:block;
+font-size:22px;
+}
+.brand span{
+display:block;
+font-size:12px;
+letter-spacing:.12em;
+text-transform:uppercase;
+opacity:.85;
+margin-top:4px;
+}
+.back-link{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+padding:12px 16px;
+border-radius:12px;
+font-weight:800;
+background:rgba(255,255,255,.12);
+border:1px solid rgba(255,255,255,.18);
+}
+.hero{
+padding:52px 0 24px;
+}
+.eyebrow{
+display:inline-block;
+margin-bottom:14px;
+font-size:12px;
+text-transform:uppercase;
+letter-spacing:.14em;
+font-weight:800;
+color:var(--blue);
+}
+h1{
+margin:0;
+font-size:clamp(34px, 6vw, 56px);
+line-height:1.05;
+letter-spacing:-.04em;
+}
+.hero p{
+margin:16px 0 0;
+font-size:18px;
+color:var(--muted);
+max-width:760px;
+}
+.card{
+background:#fff;
+border:1px solid var(--line);
+border-radius:28px;
+padding:34px;
+box-shadow:var(--shadow);
+margin:26px 0 60px;
+}
+.section{
+padding:24px 0;
+border-bottom:1px solid var(--line);
+}
+.section:last-child{
+border-bottom:none;
+padding-bottom:0;
+}
+h2{
+margin:0 0 10px;
+font-size:24px;
+line-height:1.15;
+color:var(--blue-dark);
+}
+p{
+margin:0;
+color:var(--muted);
+}
+.footer{
+padding:0 0 50px;
+text-align:center;
+color:var(--muted);
+font-size:14px;
+}
+@media (max-width:760px){
+.topbar-inner{
+flex-direction:column;
+align-items:flex-start;
+}
+.card{
+padding:22px;
+border-radius:22px;
+}
+.back-link{
+width:100%;
+}
+}
+</style>
 </head>
+<body>
 
-<body style="font-family:Arial;max-width:900px;margin:auto;padding:40px;line-height:1.6;">
+<header class="topbar">
+  <div class="container topbar-inner">
+    <div class="brand">
+      <img src="./images/logo.jpeg" alt="Logo AE ELEC">
+      <div>
+        <strong>AE ELEC</strong>
+        <span>Électricité générale en Haute-Corse</span>
+      </div>
+    </div>
+    <a href="index.html" class="back-link">← Retour au site</a>
+  </div>
+</header>
 
-<h1>Politique de cookies</h1>
+<section class="hero">
+  <div class="container">
+    <div class="eyebrow">Cookies</div>
+    <h1>Politique de cookies</h1>
+    <p>Cette page explique l’usage des cookies sur le site AE ELEC.</p>
+  </div>
+</section>
 
-<p>
-Ce site utilise des cookies pour améliorer l’expérience utilisateur.
-</p>
+<main class="container">
+  <div class="card">
+    <section class="section">
+      <h2>Qu’est-ce qu’un cookie ?</h2>
+      <p>
+        Un cookie est un petit fichier enregistré sur votre appareil lors de la consultation d’un site internet. Il permet notamment d’améliorer l’expérience utilisateur et certaines fonctionnalités du site.
+      </p>
+    </section>
 
-<h2>Qu’est-ce qu’un cookie ?</h2>
-<p>
-Un petit fichier stocké sur votre appareil.
-</p>
+    <section class="section">
+      <h2>Pourquoi des cookies peuvent être utilisés ?</h2>
+      <p>
+        Les cookies peuvent être utilisés pour faciliter la navigation, mémoriser certains choix de l’utilisateur ou améliorer le fonctionnement général du site.
+      </p>
+    </section>
 
-<h2>Utilisation</h2>
-<p>
-Améliorer la navigation et les performances.
-</p>
+    <section class="section">
+      <h2>Consentement</h2>
+      <p>
+        Lors de votre première visite sur le site, un bandeau peut vous informer de l’utilisation de cookies et vous permettre d’accepter ou de refuser leur utilisation.
+      </p>
+    </section>
 
-<h2>Gestion</h2>
-<p>
-Vous pouvez les refuser dans votre navigateur.
-</p>
+    <section class="section">
+      <h2>Gestion des cookies</h2>
+      <p>
+        Vous pouvez à tout moment modifier vos préférences ou supprimer les cookies directement depuis les paramètres de votre navigateur.
+      </p>
+    </section>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    © AE ELEC — Tous droits réservés
+  </div>
+</footer>
 
 </body>
 </html>
