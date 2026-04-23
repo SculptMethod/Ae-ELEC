@@ -3,12 +3,18 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>AE ELEC — Électricien à Biguglia, Bastia et en Haute-Corse</title>
-<meta name="description" content="AE ELEC intervient à Biguglia, Bastia et en Haute-Corse pour le dépannage électrique, la rénovation, la mise en conformité, la climatisation, les bornes de recharge et les solutions de sécurité." />
+
+<title>Électricien à Biguglia, Bastia et en Haute-Corse | Dépannage, rénovation, climatisation - AE ELEC</title>
+<meta name="description" content="AE ELEC intervient à Biguglia, Bastia et en Haute-Corse pour le dépannage électrique, la rénovation, la mise en conformité, la climatisation, les bornes de recharge, l’alarme et la vidéosurveillance. Réponse rapide, devis clair et travail soigné." />
 <meta name="robots" content="index, follow" />
 <meta name="author" content="AE ELEC" />
 <meta name="theme-color" content="#0b4f9c" />
-<meta name="keywords" content="électricien Biguglia, électricien Bastia, dépannage électrique Haute-Corse, rénovation électrique Corse, borne recharge Bastia, climatisation Biguglia, alarme Corse, domotique Corse" />
+<meta name="keywords" content="électricien Biguglia, électricien Bastia, électricien Haute-Corse, dépannage électrique Biguglia, dépannage électrique Bastia, rénovation électrique Haute-Corse, climatisation Biguglia, borne de recharge Bastia, alarme Corse, vidéosurveillance Haute-Corse" />
+
+<meta property="og:title" content="AE ELEC - Électricien à Biguglia, Bastia et en Haute-Corse" />
+<meta property="og:description" content="Dépannage, rénovation, climatisation, bornes de recharge, sécurité et mise en conformité. Intervention rapide et devis clair." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="./images/logo.jpeg" />
 
 <script type="application/ld+json">
 {
@@ -16,16 +22,27 @@
   "@type": "Electrician",
   "name": "AE ELEC",
   "image": "./images/logo.jpeg",
+  "url": "https://aeelec.netlify.app",
+  "telephone": "+33699441977",
+  "email": "Aeelecbastia@gmail.com",
+  "priceRange": "€€",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "ZI de Tragone",
     "addressLocality": "Biguglia",
     "postalCode": "20620",
+    "addressRegion": "Haute-Corse",
     "addressCountry": "FR"
   },
-  "telephone": "+33699441977",
-  "areaServed": "Haute-Corse",
-  "priceRange": "€€"
+  "areaServed": [
+    "Biguglia",
+    "Bastia",
+    "Lucciana",
+    "Borgo",
+    "Furiani",
+    "Haute-Corse",
+    "Corse"
+  ]
 }
 </script>
 
@@ -40,6 +57,7 @@
 --text:#142033;
 --muted:#667487;
 --line:#d8dee6;
+--success:#eaf6ff;
 --shadow:0 18px 46px rgba(8,57,111,.10);
 --shadow-strong:0 24px 60px rgba(8,57,111,.16);
 --radius:22px;
@@ -131,6 +149,7 @@ font-weight:800;
 transition:.25s ease;
 border:2px solid transparent;
 cursor:pointer;
+text-align:center;
 }
 
 .btn-primary{
@@ -177,7 +196,7 @@ font-weight:700;
 position:sticky;
 top:0;
 z-index:50;
-background:rgba(238,242,246,.86);
+background:rgba(238,242,246,.90);
 backdrop-filter:blur(14px);
 border-bottom:1px solid rgba(8,57,111,.08);
 }
@@ -266,7 +285,7 @@ align-items:center;
 max-width:760px;
 }
 
-.hero p{
+.hero-copy p{
 margin-top:22px;
 color:#dde7f3;
 font-size:18px;
@@ -392,6 +411,13 @@ font-weight:600;
 .grid-3{
 display:grid;
 grid-template-columns:repeat(3,1fr);
+gap:18px;
+margin-top:32px;
+}
+
+.grid-2{
+display:grid;
+grid-template-columns:repeat(2,1fr);
 gap:18px;
 margin-top:32px;
 }
@@ -667,6 +693,16 @@ min-height:150px;
 resize:vertical;
 }
 
+.form-note{
+font-size:14px;
+font-weight:700;
+color:var(--blue-dark);
+background:#f3f8ff;
+border:1px solid #d9e9ff;
+padding:12px 14px;
+border-radius:12px;
+}
+
 .map-wrap{
 margin-top:20px;
 border-radius:18px;
@@ -741,7 +777,7 @@ color:#fff;
 display:none;
 margin-top:20px;
 padding:20px;
-background:#eaf6ff;
+background:var(--success);
 border-radius:14px;
 border:1px solid #cfe8ff;
 }
@@ -761,6 +797,7 @@ grid-template-columns:1fr;
 grid-template-columns:repeat(2,1fr);
 }
 
+.grid-2,
 .reasons{
 grid-template-columns:1fr;
 }
@@ -819,6 +856,7 @@ text-align:center;
 .hero-grid,
 .quick-grid,
 .grid-3,
+.grid-2,
 .gallery,
 .process,
 .contact-grid,
@@ -896,10 +934,10 @@ object-position:center center;
 .hero-badge{
 left:auto;
 right:12px;
-bottom:12px;
-max-width:220px;
-font-size:13px;
-padding:10px 12px;
+bottom:0;
+max-width:85%;
+font-size:12px;
+padding:8px 12px;
 text-align:center;
 }
 
@@ -953,19 +991,13 @@ padding:10px 12px calc(10px + env(safe-area-inset-bottom));
 body{
 padding-bottom:76px;
 }
-.hero-badge{
-bottom:0px;
-font-size:12px;
-padding:8px 12px;
-max-width:85%;
-}  
 }
 </style>
 </head>
 <body>
 
 <div class="top-strip">
-⚡ Dépannage rapide en Haute-Corse · Disponible 24h/24 et 7j/7 · Devis gratuit
+⚡ Dépannage rapide en Haute-Corse · Réponse rapide · Devis gratuit
 </div>
 
 <header class="topbar">
@@ -979,10 +1011,9 @@ max-width:85%;
 </a>
 <nav class="menu">
 <a href="#prestations">Prestations</a>
-<a href="#demandes">Besoins fréquents</a>
+<a href="#urgences">Urgence</a>
 <a href="#realisations">Réalisations</a>
 <a href="#avant-apres">Avant / Après</a>
-<a href="#zones">Zone d’intervention</a>
 <a href="#avis">Avis</a>
 <a href="#contact">Contact</a>
 <a href="#contact" class="btn btn-primary">Demander un devis</a>
@@ -994,18 +1025,20 @@ max-width:85%;
 <div class="container hero-grid">
 <div class="hero-copy">
 <div class="eyebrow" style="color:#ffd653">AE ELEC · Biguglia · Bastia · Haute-Corse</div>
-<h1>Électricien à Biguglia, Bastia et en Haute-Corse<br>Dépannage rapide, installations fiables et chantiers soignés</h1>
-<p>AE ELEC accompagne particuliers et professionnels pour le dépannage électrique, la rénovation, la mise en conformité, la climatisation, les bornes de recharge, l’alarme, la vidéosurveillance et la domotique. Intervention rapide, devis clair et suivi sérieux.</p>
+<h1>Besoin d’un électricien fiable à Biguglia, Bastia ou en Haute-Corse ?</h1>
+<p>Dépannage électrique, rénovation, mise en conformité, climatisation, bornes de recharge, alarme, vidéosurveillance et domotique. AE ELEC intervient rapidement avec un devis clair, un travail soigné et un vrai suivi.</p>
+
 <div class="hero-actions">
-<a href="#contact" class="btn btn-primary">Demander un devis</a>
-<a href="tel:0699441977" class="btn btn-outline">Appeler maintenant</a>
-<a href="https://wa.me/33699441977" class="btn btn-outline">WhatsApp</a>
+<a href="tel:0699441977" class="btn btn-primary">📞 Appeler maintenant</a>
+<a href="https://wa.me/33699441977" class="btn btn-outline">💬 WhatsApp</a>
+<a href="#contact" class="btn btn-outline">Demander un devis</a>
 </div>
+
 <div class="hero-points">
 <div class="hero-point">Intervention rapide en Haute-Corse</div>
 <div class="hero-point">Particuliers & professionnels</div>
-<div class="hero-point">Travail soigné</div>
-<div class="hero-point">Devis clair et suivi sérieux</div>
+<div class="hero-point">Travail propre et soigné</div>
+<div class="hero-point">Devis clair avant intervention</div>
 </div>
 </div>
 
@@ -1013,9 +1046,7 @@ max-width:85%;
 <div class="hero-visual">
 <img class="hero-visual-bg" src="./images/hero-photo.jpeg" alt="Intervention AE ELEC sur chantier en Haute-Corse">
 <div class="hero-visual-overlay"></div>
-
 <img class="hero-logo-overlay" src="./images/logo.jpeg" alt="Logo AE ELEC">
-
 <div class="hero-badge">Installation propre • Finitions soignées • Réactivité locale</div>
 </div>
 </div>
@@ -1026,19 +1057,19 @@ max-width:85%;
 <div class="container quick-grid">
 <div class="quick">
 <strong>Réponse rapide</strong>
-<span>Prise de contact simple par téléphone, WhatsApp ou formulaire avec retour rapide selon l’urgence.</span>
+<span>Appel, WhatsApp ou formulaire : prise de contact simple et retour rapide selon l’urgence.</span>
 </div>
 <div class="quick">
 <strong>Basé à Biguglia</strong>
-<span>Entreprise locale avec interventions à Bastia, Lucciana, Borgo, Furiani et plus largement en Haute-Corse.</span>
+<span>Intervention à Bastia, Lucciana, Borgo, Furiani et partout en Haute-Corse.</span>
 </div>
 <div class="quick">
 <strong>Devis clair</strong>
-<span>Une réponse compréhensible, structurée et adaptée au besoin réel du client, sans complication inutile.</span>
+<span>Une réponse lisible, rassurante et adaptée au vrai besoin du chantier.</span>
 </div>
 <div class="quick">
 <strong>Prestations complètes</strong>
-<span>Électricité, climatisation, sécurité, domotique et bornes de recharge pour particuliers et professionnels.</span>
+<span>Dépannage, rénovation, climatisation, sécurité, domotique et borne de recharge.</span>
 </div>
 </div>
 </section>
@@ -1046,17 +1077,17 @@ max-width:85%;
 <section class="section-tight" style="background:#fff;">
 <div class="container" style="display:flex; flex-wrap:wrap; gap:20px; justify-content:space-between; text-align:center;">
 <div><strong>Entreprise locale</strong><br><span class="muted">basée à Biguglia</span></div>
-<div><strong>Intervention rapide</strong><br><span class="muted">en Haute-Corse</span></div>
-<div><strong>Particuliers & professionnels</strong><br><span class="muted">accompagnement complet</span></div>
-<div><strong>Travail soigné</strong><br><span class="muted">et suivi sérieux</span></div>
+<div><strong>Intervention rapide</strong><br><span class="muted">sur Bastia et Haute-Corse</span></div>
+<div><strong>Particuliers & professionnels</strong><br><span class="muted">accompagnement sérieux</span></div>
+<div><strong>Travail soigné</strong><br><span class="muted">du devis à la finition</span></div>
 </div>
 </section>
 
-<section class="section" style="background:#fff3cd;">
+<section class="section" id="urgences" style="background:#fff3cd;">
 <div class="container" style="text-align:center;">
-<div class="eyebrow">Urgence</div>
-<h2>⚡ Dépannage électrique urgent à Biguglia, Bastia ou en Haute-Corse ?</h2>
-<p class="muted" style="margin-top:10px; max-width:760px; margin-left:auto; margin-right:auto;">AE ELEC intervient rapidement pour les pannes électriques et les situations urgentes qui ne peuvent pas attendre. Contact simple, réponse rapide et prise en charge sérieuse.</p>
+<div class="eyebrow">Urgence électrique</div>
+<h2>Panne électrique ? Tableau qui saute ? Besoin d’un dépannage rapide ?</h2>
+<p class="muted" style="margin-top:10px; max-width:760px; margin-left:auto; margin-right:auto;">AE ELEC intervient rapidement à Biguglia, Bastia et en Haute-Corse pour les pannes, courts-circuits, problèmes de tableau électrique et situations urgentes qui ne peuvent pas attendre.</p>
 <div style="margin-top:20px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
 <a href="tel:0699441977" class="btn btn-primary">📞 Appeler maintenant</a>
 <a href="https://wa.me/33699441977" class="btn btn-light">💬 WhatsApp</a>
@@ -1068,37 +1099,43 @@ max-width:85%;
 <div class="container">
 <div class="eyebrow">Prestations</div>
 <h2>Des prestations complètes pour vos besoins en électricité, sécurité, confort et équipements techniques</h2>
-<p class="muted" style="margin-top:16px; max-width:860px;">AE ELEC intervient à Biguglia, Bastia et en Haute-Corse pour les travaux d’électricité générale, le dépannage, les bornes de recharge, la climatisation, la domotique et les solutions de sécurité. L’objectif : une installation fiable, un chantier propre et un résultat durable.</p>
+<p class="muted" style="margin-top:16px; max-width:860px;">AE ELEC intervient à Biguglia, Bastia et en Haute-Corse pour le dépannage électrique, la rénovation, la mise en conformité, la climatisation, les bornes de recharge, la domotique, l’alarme et la vidéosurveillance. Objectif : une installation fiable, un chantier propre et un résultat durable.</p>
+
 <div class="grid-3">
 <article class="card">
 <div class="icon">⚡</div>
 <h3>Électricité générale</h3>
 <p>Installation, rénovation, dépannage, tableaux électriques et mise en conformité avec un travail propre, fiable et adapté au logement comme au local professionnel.</p>
 </article>
+
 <article class="card">
 <div class="icon">🔋</div>
 <h3>Bornes de recharge</h3>
 <p>Installation de bornes électriques pour particuliers et professionnels avec accompagnement de la solution jusqu’à la mise en service.</p>
 </article>
+
 <article class="card">
-<div class="icon">🏠</div>
-<h3>Domotique</h3>
-<p>Équipements connectés pour gagner en confort, piloter les installations et moderniser les espaces de vie ou de travail.</p>
+<div class="icon">❄️</div>
+<h3>Climatisation</h3>
+<p>Pose, entretien et maintenance de solutions chaud / froid adaptées aux besoins des particuliers comme des professionnels.</p>
 </article>
-<article class="card">
-<div class="icon">📞</div>
-<h3>Interphone & visiophone</h3>
-<p>Solutions de contrôle d’accès pour sécuriser l’entrée, améliorer le confort d’utilisation et renforcer la tranquillité au quotidien.</p>
-</article>
+
 <article class="card">
 <div class="icon">🛡️</div>
 <h3>Vidéosurveillance & alarme</h3>
 <p>Installation de systèmes de sécurité pour protéger logements, commerces et locaux professionnels à Biguglia, Bastia et en Haute-Corse.</p>
 </article>
+
 <article class="card">
-<div class="icon">❄️</div>
-<h3>Climatisation</h3>
-<p>Pose, entretien et maintenance de solutions chaud / froid adaptées aux besoins des particuliers comme des professionnels.</p>
+<div class="icon">📞</div>
+<h3>Interphone & visiophone</h3>
+<p>Solutions de contrôle d’accès pour sécuriser l’entrée, améliorer le confort d’utilisation et renforcer la tranquillité au quotidien.</p>
+</article>
+
+<article class="card">
+<div class="icon">🏠</div>
+<h3>Domotique</h3>
+<p>Équipements connectés pour gagner en confort, piloter les installations et moderniser les espaces de vie ou de travail.</p>
 </article>
 </div>
 </div>
@@ -1106,33 +1143,34 @@ max-width:85%;
 
 <section class="section" id="demandes" style="background:#fff;">
 <div class="container">
-<div class="eyebrow">Besoins fréquents</div>
-<h2>Vous nous contactez souvent pour ce type de demande</h2>
-<p class="muted" style="margin-top:16px; max-width:860px;">Cette section permet de voir rapidement si AE ELEC peut répondre exactement à votre besoin, que ce soit pour une urgence, une rénovation ou une installation plus technique.</p>
+<div class="eyebrow">Demandes fréquentes</div>
+<h2>Vous nous contactez souvent pour ce type de besoin</h2>
+<p class="muted" style="margin-top:16px; max-width:860px;">Cette section permet de voir immédiatement si AE ELEC peut répondre à votre situation, que ce soit pour une urgence, une rénovation ou une installation plus technique.</p>
+
 <div class="grid-3">
 <div class="card">
 <h3>Panne ou dépannage urgent</h3>
-<p>Coupure, problème de tableau, circuit défaillant ou installation qui présente un dysfonctionnement à traiter rapidement.</p>
+<p>Coupure, tableau qui saute, circuit défaillant ou installation électrique à sécuriser rapidement.</p>
 </div>
 <div class="card">
 <h3>Rénovation électrique</h3>
-<p>Remise au propre, remplacement de tableau, reprise de circuits, modernisation de l’installation et mise en conformité.</p>
+<p>Remise au propre, remplacement de tableau, reprise de circuits et modernisation de l’installation existante.</p>
+</div>
+<div class="card">
+<h3>Mise en conformité</h3>
+<p>Travaux visant à sécuriser l’installation et à repartir sur une base plus propre et plus fiable.</p>
 </div>
 <div class="card">
 <h3>Installation de climatisation</h3>
-<p>Pose d’une solution chaud / froid adaptée à votre logement, à vos besoins et à la configuration des lieux.</p>
+<p>Pose d’une solution chaud / froid adaptée au logement, aux besoins du client et à la configuration des lieux.</p>
 </div>
 <div class="card">
 <h3>Borne de recharge</h3>
 <p>Installation d’une borne électrique pour maison, résidence, commerce ou activité professionnelle.</p>
 </div>
 <div class="card">
-<h3>Alarme et vidéosurveillance</h3>
+<h3>Alarme, vidéosurveillance, contrôle d’accès</h3>
 <p>Sécurisation d’un logement, d’un commerce ou d’un local professionnel avec des solutions fiables et adaptées.</p>
-</div>
-<div class="card">
-<h3>Interphone, visiophone, domotique</h3>
-<p>Amélioration du confort, du contrôle d’accès et de la gestion des équipements au quotidien.</p>
 </div>
 </div>
 </div>
@@ -1144,11 +1182,11 @@ max-width:85%;
 <div>
 <div class="eyebrow" style="color:#ffd653">Réponse rapide</div>
 <h2>Un projet ? Une urgence ?</h2>
-<p>Expliquez votre besoin en quelques secondes. AE ELEC vous recontacte rapidement avec une solution claire, adaptée et sans complication.</p>
+<p>Expliquez votre besoin en quelques secondes. AE ELEC vous recontacte rapidement avec une solution claire, adaptée et sans complication inutile.</p>
 </div>
 <div style="display:flex; gap:14px; flex-wrap:wrap;">
-<a href="#contact" class="btn btn-primary">Demander un devis</a>
-<a href="tel:0699441977" class="btn btn-outline">Appeler</a>
+<a href="tel:0699441977" class="btn btn-primary">📞 Appeler</a>
+<a href="#contact" class="btn btn-outline">Demander un devis</a>
 </div>
 </div>
 </div>
@@ -1160,16 +1198,16 @@ max-width:85%;
 <h2>Pourquoi faire appel à AE ELEC pour vos travaux électriques en Haute-Corse ?</h2>
 <div class="reasons">
 <div class="reason">
-<strong>Réactivité locale</strong>
-<p>Entreprise basée à Biguglia avec intervention rapide à Bastia, Lucciana, Borgo, Furiani et plus largement en Haute-Corse.</p>
+<strong>Entreprise locale réactive</strong>
+<p>Basé à Biguglia, AE ELEC intervient rapidement à Bastia, Lucciana, Borgo, Furiani et plus largement en Haute-Corse.</p>
 </div>
 <div class="reason">
 <strong>Travail propre et finitions soignées</strong>
-<p>Chaque intervention est réalisée avec sérieux, méthode et propreté pour un résultat net et durable.</p>
+<p>Chaque intervention est réalisée avec sérieux, méthode et propreté pour un résultat net, rassurant et durable.</p>
 </div>
 <div class="reason">
 <strong>Prestations adaptées aux particuliers et professionnels</strong>
-<p>Maison, appartement, commerce, bureau ou local professionnel : les solutions sont adaptées au besoin réel du chantier.</p>
+<p>Maison, appartement, commerce, bureau ou local professionnel : les solutions sont adaptées au vrai besoin du chantier.</p>
 </div>
 <div class="reason">
 <strong>Contact simple et devis clair</strong>
@@ -1202,7 +1240,7 @@ max-width:85%;
 
 <section class="section" id="pour-qui">
 <div class="container">
-<div class="eyebrow">Pour qui ?</div>
+<div class="eyebrow">Clients accompagnés</div>
 <h2>Nous intervenons pour différents types de clients et de besoins</h2>
 <div class="grid-3">
 <div class="card">
@@ -1324,10 +1362,8 @@ max-width:85%;
 <section class="section" id="avis">
 <div class="container">
 <div class="eyebrow">Avis clients</div>
-<h2>Ils nous font confiance à Biguglia, Bastia et en Haute-Corse</h2>
-<p class="muted" style="margin-top:16px; max-width:860px;">
-AE ELEC accorde une grande importance à la qualité d’exécution, à la propreté du chantier et au sérieux du suivi. Les retours clients rassurent avant la prise de contact et renforcent la crédibilité de l’entreprise.
-</p>
+<h2>Des retours qui rassurent avant la prise de contact</h2>
+<p class="muted" style="margin-top:16px; max-width:860px;">AE ELEC accorde une grande importance à la qualité d’exécution, à la propreté du chantier et au sérieux du suivi. Les avis clients jouent un rôle clé pour rassurer et déclencher un appel ou une demande de devis.</p>
 
 <div class="grid-3" style="margin-top:28px;">
 <div class="card">
@@ -1361,13 +1397,13 @@ AE ELEC accorde une grande importance à la qualité d’exécution, à la propr
 
 <section class="section" id="process">
 <div class="container">
-<div class="eyebrow">Process</div>
-<h2>Un fonctionnement simple, fluide et rassurant</h2>
+<div class="eyebrow">Fonctionnement</div>
+<h2>Un parcours simple, fluide et rassurant</h2>
 <div class="process">
 <div class="step">
 <div class="number">1</div>
 <h3>Prise de contact</h3>
-<p>Échange rapide pour comprendre le besoin, la localisation, le niveau d’urgence et le type d’intervention à prévoir.</p>
+<p>Échange rapide pour comprendre le besoin, la localisation, le niveau d’urgence et le type d’intervention.</p>
 </div>
 <div class="step">
 <div class="number">2</div>
@@ -1377,7 +1413,7 @@ AE ELEC accorde une grande importance à la qualité d’exécution, à la propr
 <div class="step">
 <div class="number">3</div>
 <h3>Devis clair</h3>
-<p>Une proposition lisible et compréhensible, sans complication inutile, pour avancer rapidement et sereinement.</p>
+<p>Une proposition lisible et compréhensible pour avancer rapidement et sereinement.</p>
 </div>
 <div class="step">
 <div class="number">4</div>
@@ -1393,8 +1429,8 @@ AE ELEC accorde une grande importance à la qualité d’exécution, à la propr
 <div class="cta">
 <div>
 <div class="eyebrow" style="color:#ffd653">Besoin d’un devis ?</div>
-<h2>Obtenez un devis rapide et une intervention fiable</h2>
-<p>Expliquez votre besoin en quelques secondes. AE ELEC vous recontacte rapidement avec une solution claire et adaptée.</p>
+<h2>Obtenez une réponse rapide pour votre dépannage ou votre projet</h2>
+<p>Appelez-nous ou décrivez votre besoin en ligne. AE ELEC vous répond rapidement avec une solution claire, adaptée et sans complication inutile.</p>
 </div>
 <div style="display:flex; gap:14px; flex-wrap:wrap;">
 <a href="tel:0699441977" class="btn btn-primary">📞 Appeler maintenant</a>
@@ -1407,8 +1443,8 @@ AE ELEC accorde une grande importance à la qualité d’exécution, à la propr
 
 <section class="section" style="background:#0b4f9c;color:#fff;text-align:center;">
 <div class="container">
-<h2>Besoin d’un électricien fiable à Biguglia ou Bastia ?</h2>
-<p style="margin-top:10px; color:#dde7f3;">Intervention rapide • Travail soigné • Devis clair</p>
+<h2>Besoin d’un électricien fiable à Biguglia, Bastia ou en Haute-Corse ?</h2>
+<p style="margin-top:10px; color:#dde7f3;">Dépannage • Rénovation • Climatisation • Sécurité • Borne de recharge</p>
 <div style="margin-top:20px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
 <a href="tel:0699441977" class="btn btn-primary">📞 Appeler maintenant</a>
 <a href="https://wa.me/33699441977" class="btn btn-outline">💬 WhatsApp</a>
@@ -1420,7 +1456,7 @@ AE ELEC accorde une grande importance à la qualité d’exécution, à la propr
 <section class="section" id="contact">
 <div class="container">
 <div class="eyebrow">Contact</div>
-<h2>Parlons de votre projet</h2>
+<h2>Décrivez votre besoin, on vous recontacte rapidement</h2>
 <div class="contact-grid">
 <div class="info-list">
 <div class="info">
@@ -1441,7 +1477,7 @@ AE ELEC accorde une grande importance à la qualité d’exécution, à la propr
 </div>
 <div class="info">
 <strong>Disponibilité</strong>
-<span>24h/24 et 7j/7</span>
+<span>Réponse rapide selon l’urgence</span>
 </div>
 <div class="info">
 <strong>Zone couverte</strong>
@@ -1466,6 +1502,8 @@ referrerpolicy="no-referrer-when-downgrade">
 </div>
 
 <div class="contact-card">
+<div class="form-note">Réponse rapide • Devis clair • Sans engagement</div>
+
 <form
 name="demande-devis"
 method="POST"
@@ -1515,7 +1553,6 @@ onsubmit="showMessage(event)"
 <strong style="color:#0b4f9c; font-size:18px;">
 Votre demande a bien été transmise ✓
 </strong>
-
 <p style="margin-top:12px; color:#142033; line-height:1.6;">
 Merci pour votre confiance.<br><br>
 L’équipe <strong>AE ELEC</strong> va étudier votre demande avec attention afin de vous proposer une solution adaptée à votre besoin.<br><br>
@@ -1535,6 +1572,9 @@ Nous reviendrons vers vous rapidement pour faire le point ensemble.
 ZI de Tragone, 20620 Biguglia<br>
 06 99 44 19 77 · 06 50 17 23 02<br>
 Email : Aeelecbastia@gmail.com
+</p>
+<p style="margin-top:12px; max-width:860px; margin-left:auto; margin-right:auto;">
+AE ELEC intervient pour le dépannage électrique, la rénovation, la climatisation, les bornes de recharge, la domotique, l’alarme et la vidéosurveillance à Biguglia, Bastia et en Haute-Corse.
 </p>
 <p style="margin-top:12px; font-size:13px;">
 © AE ELEC — Tous droits réservés · Électricien Biguglia · Bastia · Haute-Corse · Corse
