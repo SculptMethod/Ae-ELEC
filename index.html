@@ -1625,10 +1625,12 @@ AE ELEC intervient pour le dépannage électrique, la rénovation, la climatisat
 </p>
 <p style="margin-top:12px; font-size:13px;">
 © AE ELEC — Tous droits réservés · Électricien Biguglia · Bastia · Haute-Corse · Corse
-<p style="margin-top:16px;">
-<a href="mentions-legales.html">Mentions légales</a> · 
-<a href="confidentialite.html">Confidentialité</a> · 
-<a href="cookies.html">Cookies</a>  
+<p style="margin-top:18px; font-size:14px; display:flex; justify-content:center; gap:14px; flex-wrap:wrap;">
+  <a href="mentions-legales.html" style="font-weight:700;">Mentions légales</a>
+  <span>·</span>
+  <a href="confidentialite.html" style="font-weight:700;">Confidentialité</a>
+  <span>·</span>
+  <a href="cookies.html" style="font-weight:700;">Cookies</a>
 </p>
 </div>
 </footer>
@@ -1660,6 +1662,35 @@ function showMessage(event) {
   });
 }
 </script>
+<div id="cookie-banner" style="position:fixed;bottom:18px;left:18px;right:18px;max-width:760px;margin:auto;background:#0b4f9c;color:#fff;padding:18px 20px;border-radius:18px;box-shadow:0 18px 46px rgba(8,57,111,.28);z-index:9999;text-align:left;">
+  <div style="font-weight:800; font-size:16px; margin-bottom:6px;">Gestion des cookies</div>
+  <div style="font-size:14px; line-height:1.6; color:#dbe6f2;">
+    Ce site utilise des cookies pour améliorer votre expérience utilisateur.
+    <a href="cookies.html" style="color:#f4c415; font-weight:700;">En savoir plus</a>
+  </div>
+  <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
+    <button onclick="acceptCookies()" style="padding:10px 16px;border:none;background:#f4c415;color:#162131;font-weight:800;border-radius:10px;cursor:pointer;">Accepter</button>
+    <button onclick="declineCookies()" style="padding:10px 16px;border:none;background:#fff;color:#142033;font-weight:800;border-radius:10px;cursor:pointer;">Refuser</button>
+  </div>
+</div>
 
+<script>
+function acceptCookies() {
+  localStorage.setItem("cookies", "accepted");
+  document.getElementById("cookie-banner").style.display = "none";
+}
+
+function declineCookies() {
+  localStorage.setItem("cookies", "declined");
+  document.getElementById("cookie-banner").style.display = "none";
+}
+
+window.addEventListener("load", function() {
+  if (localStorage.getItem("cookies")) {
+    var banner = document.getElementById("cookie-banner");
+    if (banner) banner.style.display = "none";
+  }
+});
+</script>
 </body>
 </html>
