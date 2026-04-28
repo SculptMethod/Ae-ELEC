@@ -145,7 +145,7 @@ h3{font-size:22px;line-height:1.2;}
 .hero-visual{min-height:490px;border-radius:24px;overflow:hidden;position:relative;background:linear-gradient(135deg, #dfe6ee 0%, #cfd8e3 100%);display:flex;align-items:flex-end;justify-content:flex-start;}
 .hero-visual-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
 .hero-visual-overlay{position:absolute;inset:0;background:linear-gradient(180deg, rgba(6,40,79,.08) 0%, rgba(6,40,79,.58) 100%);}
-.hero-logo-overlay{position:absolute;top:20px;left:20px;z-index:2;width:70px;height:70px;object-fit:contain;object-position:center center;pointer-events:none;opacity:.95;background:rgba(255,255,255,.08);backdrop-filter:blur(8px);border-radius:14px;padding:8px;box-shadow:0 8px 20px rgba(0,0,0,.25);}
+.hero-logo-overlay{position:absolute;top:20px;left:20px;z-index:2;width:120px;height:120px;object-fit:contain;object-position:center center;pointer-events:none;opacity:1;background:none;border-radius:0;padding:0;box-shadow:none;}
 .hero-badge{position:absolute;right:18px;bottom:18px;z-index:3;background:rgba(8,57,111,.92);color:#fff;padding:12px 16px;border-radius:999px;font-size:14px;font-weight:900;backdrop-filter:blur(10px);max-width:280px;text-align:center;box-shadow:0 14px 32px rgba(0,0,0,.18);}
 .quick-bar{margin-top:-42px;position:relative;z-index:3;}
 .quick-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
@@ -490,7 +490,7 @@ input:focus,textarea:focus,select:focus{outline:none;border-color:rgba(11,79,156
 .footer-links a:hover,.footer-legal-links a:hover,.footer-list a:hover{color:#fff;transform:translateX(3px);}
 @keyframes sectionFade{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
 @media (max-width:760px){
-  .hero-logo-overlay{top:14px;left:14px;width:58px;height:58px;border-radius:12px;padding:7px;}
+  .hero-logo-overlay{position:absolute;top:20px;left:20px;z-index:2;width:120px;height:120px;object-fit:contain;object-position:center center;pointer-events:none;opacity:1;background:none;border-radius:0;padding:0;box-shadow:none;}
   .hero-trust{justify-content:center;}
   .hero-trust span{width:100%;text-align:center;border-left:none;border-top:2px solid var(--yellow);}
   .form-note{width:100%;justify-content:center;text-align:center;border-radius:14px;}
