@@ -247,7 +247,61 @@ textarea{min-height:150px;resize:vertical;}
 @media (max-width:1050px){.hero-grid,.cta,.contact-grid,.review-highlight{grid-template-columns:1fr;}.quick-grid,.grid-3,.gallery,.before-after-grid{grid-template-columns:repeat(2,1fr);}.grid-2,.reasons{grid-template-columns:1fr;}.hero-visual{min-height:380px;}}
 @media (max-width:980px){.footer-premium-grid{grid-template-columns:1fr;}}
 @media (max-width:760px){.menu{display:none;}.section{padding:62px 0;}.section-tight{padding:44px 0;}.container{width:calc(100% - 24px);}.nav{min-height:72px;}.brand{width:100%;gap:12px;}.brand img{width:52px;height:52px;}.brand strong{font-size:18px;line-height:1.1;}.brand span{font-size:11px;letter-spacing:.08em;}.hero{padding:46px 0 80px;text-align:center;}.hero-grid,.quick-grid,.grid-3,.grid-2,.gallery,.contact-grid,.cta,.reasons,.before-after-grid,.review-highlight{grid-template-columns:1fr!important;}.hero h1{font-size:clamp(32px,8vw,48px);line-height:1.06;letter-spacing:-.035em;text-align:center;overflow-wrap:anywhere;max-width:900px;margin:0 auto;}.hero p{font-size:15px;max-width:100%;text-align:center;overflow-wrap:anywhere;}.hero-actions{flex-direction:column;width:100%;gap:12px;}.hero-actions .btn{width:100%;}.hero-points{flex-direction:column;gap:10px;}.hero-point{width:100%;text-align:center;}.hero-card,.hero-visual,.card,.quick,.reason,.info,.contact-card,.gallery-item,.before-after-card,.review-form-card,.faq-card{width:100%;min-width:0;}.hero-visual{min-height:320px;align-items:flex-end;justify-content:flex-start;}.hero-badge{left:auto;right:12px;bottom:12px;max-width:85%;font-size:12px;padding:8px 12px;text-align:center;}.quick-bar{margin-top:-24px;}.gallery-item{min-height:220px;}.gallery-caption{left:12px;right:12px;bottom:12px;font-size:13px;}.before-after-images{grid-template-columns:1fr;}.before-after-images img{height:220px;}.cta{padding:24px;}.cta>div:last-child{display:flex!important;flex-direction:column;gap:12px;width:100%;}.btn{width:100%;}.whatsapp-float{display:none;}.mobile-bar{display:flex;padding:10px 12px calc(10px + env(safe-area-inset-bottom));}body{padding-bottom:76px;}.footer-premium{padding:0 0 92px;}.footer-premium-inner{padding-top:36px;}.footer-premium-card{padding:20px;border-radius:20px;}.footer-brand{align-items:flex-start;}.footer-brand img{width:58px;height:58px;}.footer-brand strong{font-size:21px;}.footer-bottom{font-size:13px;}.cookie-banner{left:12px;right:12px;bottom:86px;padding:16px;border-radius:16px;}.cookie-actions{flex-direction:column;}.cookie-btn{width:100%;}}
-</style>
+
+/* ==============================
+   PREMIUM UI UPGRADE — AE ELEC
+   ============================== */
+:root{
+  --premium-navy:#071b33;
+  --premium-blue:#0b4f9c;
+  --premium-blue-dark:#06284f;
+  --premium-gold:#f4c415;
+  --premium-card:rgba(255,255,255,.94);
+}
+
+body{
+  background:linear-gradient(180deg,#f8fbff 0%,#eef3f9 100%);
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+h1,h2,h3{
+  letter-spacing:-.04em;
+}
+
+.topbar{
+  background:rgba(255,255,255,.90);
+  backdrop-filter:blur(18px);
+  box-shadow:0 10px 30px rgba(8,57,111,.06);
+}
+
+.brand img{
+  width:72px;
+  height:72px;
+  border-radius:18px;
+  box-shadow:0 14px 30px rgba(8,57,111,.14);
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+
+.brand:hover img{
+  transform:translateY(-2px) scale(1.02);
+  box-shadow:0 18px 38px rgba(8,57,111,.18);
+}
+
+.btn{
+  border-radius:999px;
+  font-weight:900;
+  letter-spacing:-.01em;
+  position:relative;
+  overflow:hidden;
+}
+
+.btn::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,.34),transparent);
+  transform:transla
 </head>
 <body>
 
@@ -354,7 +408,7 @@ textarea{min-height:150px;resize:vertical;}
 <section class="section" id="prestations">
   <div class="container">
     <div class="eyebrow">Prestations</div>
-    <h2>Des solutions électriques complètes, du dépannage au projet haut de gamme</h2>
+    <h2>Des solutions électriques complètes, du dépannage au projet propre et soigné</h2>
     <p class="muted" style="margin-top:16px; max-width:820px;">
       Une offre claire pour sécuriser, rénover, équiper et moderniser votre logement ou votre local professionnel.
     </p>
