@@ -138,13 +138,15 @@ h3{font-size:22px;line-height:1.2;}
 .hero-copy p{margin-top:22px;color:#e7eff8;font-size:18px;max-width:690px;font-weight:500;}
 .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px;}
 .hero-points{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px;}
-.hero-point{padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.12);color:#eff4f9;font-size:14px;font-weight:800;}
+.hero-point{padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.12);color:#eff4f9;font-size:14px;font-weight:800;box-shadow:inset 0 0 0 1px rgba(255,255,255,.02);}
+.hero-trust{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;color:#dbe8f5;font-size:13px;font-weight:800;}
+.hero-trust span{padding:8px 12px;border-left:2px solid var(--yellow);background:rgba(255,255,255,.06);border-radius:10px;}
 .hero-card{padding:18px;border-radius:28px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);box-shadow:var(--shadow-strong);}
 .hero-visual{min-height:490px;border-radius:24px;overflow:hidden;position:relative;background:linear-gradient(135deg, #dfe6ee 0%, #cfd8e3 100%);display:flex;align-items:flex-end;justify-content:flex-start;}
 .hero-visual-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
 .hero-visual-overlay{position:absolute;inset:0;background:linear-gradient(180deg, rgba(6,40,79,.08) 0%, rgba(6,40,79,.58) 100%);}
-.hero-logo-overlay{position:absolute;inset:0;z-index:2;width:100%;height:100%;object-fit:cover;object-position:center center;pointer-events:none;opacity:.9;}
-.hero-badge{position:absolute;right:18px;bottom:18px;z-index:3;background:rgba(8,57,111,.92);color:#fff;padding:12px 16px;border-radius:14px;font-size:14px;font-weight:800;backdrop-filter:blur(10px);max-width:260px;text-align:center;}
+.hero-logo-overlay{position:absolute;top:24px;left:24px;z-index:2;width:120px;height:120px;object-fit:contain;object-position:center center;pointer-events:none;opacity:.92;background:rgba(255,255,255,.92);border-radius:24px;padding:14px;box-shadow:0 18px 40px rgba(0,0,0,.18);}
+.hero-badge{position:absolute;right:18px;bottom:18px;z-index:3;background:rgba(8,57,111,.92);color:#fff;padding:12px 16px;border-radius:999px;font-size:14px;font-weight:900;backdrop-filter:blur(10px);max-width:280px;text-align:center;box-shadow:0 14px 32px rgba(0,0,0,.18);}
 .quick-bar{margin-top:-42px;position:relative;z-index:3;}
 .quick-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
 .quick{background:rgba(255,255,255,.92);border:1px solid rgba(216,222,230,.9);border-radius:24px;padding:24px;box-shadow:var(--shadow);backdrop-filter:blur(10px);transition:.25s ease;}
@@ -474,6 +476,25 @@ h1,h2,h3{
   .gallery-item{min-height:260px;}
 }
 
+/* Design boost V2 */
+.urgency-section{background:linear-gradient(135deg,#fff8d9 0%,#fff3cd 55%,#fffaf0 100%);position:relative;overflow:hidden;}
+.urgency-section::before{content:"";position:absolute;right:-120px;top:-120px;width:280px;height:280px;background:rgba(244,196,21,.22);border-radius:50%;filter:blur(10px);}
+.section-reveal{animation:sectionFade .75s ease both;}
+.quick-grid,.grid-3,.grid-2,.reasons,.gallery,.contact-grid{align-items:stretch;}
+.service-card{position:relative;overflow:hidden;}
+.service-card::after{content:"";position:absolute;right:-48px;top:-48px;width:110px;height:110px;border-radius:50%;background:rgba(11,79,156,.05);transition:.3s ease;}
+.service-card:hover::after{transform:scale(1.25);background:rgba(244,196,21,.10);}
+.form-note{border-radius:999px;display:inline-flex;width:max-content;max-width:100%;}
+input:focus,textarea:focus,select:focus{outline:none;border-color:rgba(11,79,156,.55);box-shadow:0 0 0 4px rgba(11,79,156,.10);background:#fff;}
+.footer-links a,.footer-legal-links a,.footer-list a{transition:.2s ease;}
+.footer-links a:hover,.footer-legal-links a:hover,.footer-list a:hover{color:#fff;transform:translateX(3px);}
+@keyframes sectionFade{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+@media (max-width:760px){
+  .hero-logo-overlay{top:14px;left:14px;width:82px;height:82px;border-radius:18px;padding:10px;}
+  .hero-trust{justify-content:center;}
+  .hero-trust span{width:100%;text-align:center;border-left:none;border-top:2px solid var(--yellow);}
+  .form-note{width:100%;justify-content:center;text-align:center;border-radius:14px;}
+}
 @media (prefers-reduced-motion: reduce){
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important;}
 }
@@ -528,10 +549,16 @@ h1,h2,h3{
       </div>
 
       <div class="hero-points">
-        <div class="hero-point">Dépannage électrique</div>
-        <div class="hero-point">Rénovation</div>
-        <div class="hero-point">Climatisation</div>
-        <div class="hero-point">Bornes & sécurité</div>
+        <div class="hero-point">⚡ Dépannage électrique</div>
+        <div class="hero-point">🔧 Rénovation</div>
+        <div class="hero-point">❄️ Climatisation</div>
+        <div class="hero-point">🔋 Bornes & sécurité</div>
+      </div>
+
+      <div class="hero-trust">
+        <span>Basé à Biguglia</span>
+        <span>Bastia & Haute-Corse</span>
+        <span>Particuliers & professionnels</span>
       </div>
     </div>
 
@@ -540,7 +567,7 @@ h1,h2,h3{
         <img class="hero-visual-bg" src="./images/hero-photo.jpeg" alt="Intervention AE ELEC sur chantier en Haute-Corse">
         <div class="hero-visual-overlay"></div>
         <img class="hero-logo-overlay" src="./images/logo.jpeg" alt="Logo AE ELEC">
-        <div class="hero-badge">Installation propre • Réactivité locale • Devis clair</div>
+        <div class="hero-badge">Travail propre • Réponse rapide • Devis clair</div>
       </div>
     </div>
   </div>
@@ -567,12 +594,12 @@ h1,h2,h3{
   </div>
 </section>
 
-<section class="section" id="urgences" style="background:#fff3cd;">
+<section class="section urgency-section" id="urgences">
   <div class="container" style="text-align:center;">
     <div class="eyebrow">Urgence électrique</div>
-    <h2>Panne, court-circuit ou tableau qui saute ?</h2>
+    <h2>Une panne électrique ? Un tableau qui saute ?</h2>
     <p class="muted" style="margin-top:12px; max-width:760px; margin-left:auto; margin-right:auto;">
-      AE ELEC intervient rapidement selon l’urgence pour sécuriser, diagnostiquer et remettre votre installation en état.
+      Contactez directement AE ELEC pour sécuriser la situation, identifier le problème et organiser une intervention adaptée.
     </p>
     <div style="margin-top:22px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
       <a href="tel:0699441977" class="btn btn-primary" onclick="trackLead('urgence_call')">📞 Appeler maintenant</a>
@@ -581,10 +608,10 @@ h1,h2,h3{
   </div>
 </section>
 
-<section class="section" id="prestations">
+<section class="section section-reveal" id="prestations">
   <div class="container">
     <div class="eyebrow">Prestations</div>
-    <h2>Des solutions électriques complètes, du dépannage au projet propre et soigné</h2>
+    <h2>Des prestations claires pour vos travaux électriques</h2>
     <p class="muted" style="margin-top:16px; max-width:820px;">
       Une offre claire pour sécuriser, rénover, équiper et moderniser votre logement ou votre local professionnel.
     </p>
@@ -655,10 +682,10 @@ h1,h2,h3{
 
 
 
-<section class="section band" id="preuves">
+<section class="section band section-reveal" id="preuves">
   <div class="container">
     <div class="eyebrow">Pourquoi AE ELEC</div>
-    <h2>Une entreprise locale, réactive et exigeante sur les finitions</h2>
+    <h2>Une entreprise locale, réactive et soigneuse</h2>
 
     <div class="reasons">
       <div class="reason">
@@ -681,7 +708,7 @@ h1,h2,h3{
   </div>
 </section>
 
-<section class="section">
+<section class="section section-reveal">
   <div class="container">
     <div class="cta">
       <div>
@@ -698,10 +725,10 @@ h1,h2,h3{
   </div>
 </section>
 
-<section class="section" id="realisations">
+<section class="section section-reveal" id="realisations">
   <div class="container">
     <div class="eyebrow">Réalisations</div>
-    <h2>Des réalisations concrètes, propres et soignées</h2>
+    <h2>Des réalisations concrètes et propres</h2>
     <p class="muted" style="margin-top:16px; max-width:760px;">
       Tableaux électriques, éclairages extérieurs, mises en valeur de villa et finitions propres : des exemples visuels pour juger la qualité du travail.
     </p>
@@ -744,10 +771,10 @@ h1,h2,h3{
 
 
 
-<section class="section" id="avis" style="background:#fff;">
+<section class="section section-reveal" id="avis" style="background:#fff;">
   <div class="container">
     <div class="eyebrow">Avis clients</div>
-    <h2>Votre retour compte</h2>
+    <h2>Laissez votre avis après intervention</h2>
     <p class="muted" style="margin-top:16px; max-width:760px;">
       Vous avez fait appel à AE ELEC ? Laissez votre avis directement depuis le formulaire. Il sera transmis à l’entreprise puis vérifié avant publication.
     </p>
@@ -785,10 +812,10 @@ h1,h2,h3{
   </div>
 </section>
 
-<section class="section" id="faq">
+<section class="section section-reveal" id="faq">
   <div class="container">
     <div class="eyebrow">Questions fréquentes</div>
-    <h2>Les réponses utiles avant de contacter AE ELEC</h2>
+    <h2>Questions fréquentes avant intervention</h2>
 
     <div class="grid-2">
       <div class="faq-card"><h3>Intervenez-vous rapidement en cas de panne ?</h3><p>Oui. Selon l’urgence et la localisation, AE ELEC fait le maximum pour intervenir rapidement.</p></div>
@@ -799,7 +826,7 @@ h1,h2,h3{
   </div>
 </section>
 
-<section class="section" style="background:#fff;">
+<section class="section section-reveal" style="background:#fff;">
   <div class="container">
     <div class="seo-text">
       <div class="eyebrow">Électricien local</div>
@@ -814,10 +841,10 @@ h1,h2,h3{
   </div>
 </section>
 
-<section class="section" id="contact">
+<section class="section section-reveal" id="contact">
   <div class="container">
     <div class="eyebrow">Contact</div>
-    <h2>Un besoin électrique ? Parlons-en simplement</h2>
+    <h2>Expliquez votre besoin, on vous répond rapidement</h2>
 
     <div class="contact-grid">
       <div class="info-list">
