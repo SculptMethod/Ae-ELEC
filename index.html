@@ -412,32 +412,12 @@ textarea{min-height:150px;resize:vertical;}
   </div>
 </section>
 
-<section class="section" style="background:#fff;">
-  <div class="container">
-    <div class="eyebrow">Pourquoi nous choisir</div>
-    <h2>Un service clair, local et efficace</h2>
 
-    <div class="grid-3">
-      <div class="card">
-        <h3>Réactivité</h3>
-        <p>Vous savez rapidement si l’intervention est possible et comment avancer.</p>
-      </div>
-      <div class="card">
-        <h3>Clarté</h3>
-        <p>Devis lisible, échanges simples et suivi sérieux du début à la fin.</p>
-      </div>
-      <div class="card">
-        <h3>Finition propre</h3>
-        <p>Un chantier organisé, une installation fiable et un résultat professionnel.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
 <section class="section band" id="preuves">
   <div class="container">
-    <div class="eyebrow">AE ELEC</div>
-    <h2>Une entreprise locale pour vos travaux en Haute-Corse</h2>
+    <div class="eyebrow">Pourquoi AE ELEC</div>
+    <h2>Une entreprise locale, réactive et soignée</h2>
 
     <div class="reasons">
       <div class="reason">
@@ -445,15 +425,15 @@ textarea{min-height:150px;resize:vertical;}
         <p>Intervention à Bastia, Lucciana, Borgo, Furiani et plus largement en Haute-Corse.</p>
       </div>
       <div class="reason">
-        <strong>Particuliers & professionnels</strong>
-        <p>Maison, appartement, commerce, bureau ou local professionnel.</p>
+        <strong>Devis clair</strong>
+        <p>Une réponse simple, lisible et adaptée à votre besoin.</p>
       </div>
       <div class="reason">
-        <strong>Prestations complètes</strong>
-        <p>Électricité, climatisation, borne de recharge, alarme, vidéosurveillance et domotique.</p>
+        <strong>Travail propre</strong>
+        <p>Installation organisée, finitions soignées et résultat fiable.</p>
       </div>
       <div class="reason">
-        <strong>Contact simple</strong>
+        <strong>Contact rapide</strong>
         <p>Appel direct, WhatsApp ou formulaire de demande de devis.</p>
       </div>
     </div>
@@ -521,46 +501,19 @@ textarea{min-height:150px;resize:vertical;}
 
 
 
-<section class="section" id="zones">
-  <div class="container">
-    <div class="eyebrow">Zone d’intervention</div>
-    <h2>Biguglia, Bastia, Lucciana, Borgo, Furiani et Haute-Corse</h2>
-    <p class="muted" style="margin-top:16px; max-width:850px;">
-      AE ELEC intervient localement pour les dépannages, rénovations, installations électriques, climatisations, bornes de recharge et systèmes de sécurité.
-    </p>
-  </div>
-</section>
+
 
 <section class="section" id="avis" style="background:#fff;">
   <div class="container">
     <div class="eyebrow">Avis clients</div>
-    <h2>Un espace dédié aux retours clients</h2>
+    <h2>Votre retour compte</h2>
     <p class="muted" style="margin-top:16px; max-width:760px;">
-      Les premiers avis clients validés pourront être publiés ici après intervention.
+      Vous avez fait appel à AE ELEC ? Laissez votre avis directement depuis le formulaire. Il sera transmis à l’entreprise puis vérifié avant publication.
     </p>
-
-    <div class="grid-3">
-      <div class="card"><div class="icon">⭐</div><h3>Avis à venir</h3><p>Les retours clients seront ajoutés progressivement.</p></div>
-      <div class="card"><div class="icon">⭐</div><h3>Retours vérifiés</h3><p>Les avis sont relus avant publication sur le site.</p></div>
-      <div class="card"><div class="icon">⭐</div><h3>Qualité suivie</h3><p>Chaque retour aide à améliorer le service et le suivi client.</p></div>
-    </div>
-
-    <div class="review-highlight">
-      <div class="review-highlight-box">
-        <div class="eyebrow" style="color:#ffd653;">Votre retour compte</div>
-        <h3 style="color:#fff; font-size:28px; line-height:1.1;">Vous avez fait appel à AE ELEC ?</h3>
-        <p>Laissez votre avis. Il sera transmis à l’entreprise puis vérifié avant publication.</p>
-        <div style="margin-top:18px;"><a href="#review-form" class="btn btn-primary" onclick="trackLead('avis_anchor')">Laisser un avis</a></div>
-      </div>
-      <div class="card" style="margin:0;">
-        <h3>Simple et maîtrisé</h3>
-        <p>L’avis est reçu, relu, puis publié uniquement après validation.</p>
-      </div>
-    </div>
 
     <div class="review-form-card" id="review-form">
       <div class="form-note">Avis libre • Vérification avant publication</div>
-      <p style="margin-top:14px; color:#667487;">Votre avis sera transmis à AE ELEC avant toute publication.</p>
+      <p style="margin-top:14px; color:#667487;">Votre avis ne sera pas publié automatiquement. Il sera relu avant toute mise en ligne.</p>
 
       <form name="avis-client" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="showReviewMessage(event)">
         <input type="hidden" name="form-name" value="avis-client" />
@@ -579,7 +532,6 @@ textarea{min-height:150px;resize:vertical;}
         </div>
         <input type="text" name="titre-avis" placeholder="Titre de votre avis" required />
         <textarea name="message" placeholder="Décrivez votre retour après l’intervention" required></textarea>
-        <div class="review-note">Votre avis ne sera pas publié automatiquement.</div>
         <label style="font-size:14px; color:#667487; display:flex; gap:10px; align-items:flex-start;"><input type="checkbox" required style="width:auto; margin-top:4px;"><span>J’accepte que mon avis soit transmis à AE ELEC et éventuellement publié après vérification.</span></label>
         <button type="submit" class="btn btn-primary">Envoyer mon avis</button>
       </form>
