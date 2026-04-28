@@ -132,7 +132,7 @@ h3{font-size:22px;line-height:1.2;}
 .menu{display:flex;align-items:center;gap:20px;color:#304055;font-weight:800;}
 .menu a:hover{color:var(--blue);}
 .hero{position:relative;overflow:hidden;color:#fff;background:radial-gradient(circle at 82% 8%, rgba(244,196,21,.28), transparent 28%),radial-gradient(circle at 8% 18%, rgba(255,255,255,.13), transparent 24%),linear-gradient(135deg,#082f5d 0%,#0b4f9c 46%,#061f3f 100%);padding:92px 0 112px;}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.05),rgba(255,255,255,0) 42%),url("data:image/svg+xml,%3Csvg width='160' height='160' viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='rgba(255,255,255,0.08)' stroke-width='1'%3E%3Cpath d='M0 80h160M80 0v160'/%3E%3C/g%3E%3C/svg%3E");opacity:.52;pointer-events:none;}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.05),rgba(255,255,255,0) 42%);opacity:.52;pointer-events:none;}
 .hero-grid{position:relative;display:grid;grid-template-columns:1.04fr .96fr;gap:42px;align-items:center;}
 .hero-copy{max-width:760px;position:relative;z-index:2;}
 .hero-copy p{margin-top:22px;color:#e7eff8;font-size:18px;max-width:690px;font-weight:500;}
@@ -214,7 +214,7 @@ textarea{min-height:150px;resize:vertical;}
 .footer-premium{background:linear-gradient(135deg,#081827 0%,#0f1724 58%,#061f3f 100%);color:#d8e0ea;padding:0 0 92px;text-align:left;}
 .footer-premium-inner{padding-top:56px;}
 .footer-premium-grid{display:grid;grid-template-columns:1.15fr .85fr .85fr;gap:28px;align-items:start;}
-.footer-premium-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:28px;padding:28px;backdrop-filter:
+.footer-premium-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:28px;padding:28px;backdrop-filter:blur(10px);}
 .footer-brand{display:flex;align-items:center;gap:14px;margin-bottom:18px;}
 .footer-brand img{width:70px;height:70px;object-fit:contain;background:#fff;padding:8px;border-radius:16px;}
 .footer-brand strong{display:block;font-size:24px;color:#fff;line-height:1.05;}
