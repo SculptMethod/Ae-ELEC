@@ -280,8 +280,8 @@ transition:.28s ease;
 .realisation-caption strong{display:block;font-size:28px;line-height:1.08;letter-spacing:-.055em;color:#fff;font-weight:900;}
 .realisation-caption span{display:block;margin-top:8px;color:rgba(255,255,255,.74);font-weight:600;}
 .realisation-nav{position:absolute;top:50%;left:18px;right:18px;transform:translateY(-50%);display:flex;justify-content:space-between;z-index:5;pointer-events:none;}
-.realisation-nav a{width:48px;height:48px;border-radius:999px;background:rgba(255,255,255,.90);color:#080b10;display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:900;box-shadow:0 12px 30px rgba(0,0,0,.18);pointer-events:auto;transition:.25s ease;}
-.realisation-nav a:hover{background:#fff;transform:translateY(-2px);}
+.realisation-nav button{width:48px;height:48px;border-radius:999px;background:rgba(255,255,255,.90);color:#080b10;display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:900;box-shadow:0 12px 30px rgba(0,0,0,.18);pointer-events:auto;transition:.25s ease;border:0;cursor:pointer;}
+.realisation-nav button:hover{background:#fff;transform:translateY(-2px);}
 .realisation-dots{display:flex;gap:10px;justify-content:center;margin-top:18px;}
 .realisation-dots a{width:10px;height:10px;border-radius:999px;background:#c8c0b4;transition:.25s ease;}
 .realisation-dots a:hover{background:#080b10;transform:scale(1.2);}
@@ -392,7 +392,7 @@ h1{font-size:clamp(38px,12vw,54px);letter-spacing:-.055em;}
 .realisation-caption strong{font-size:22px;}
 .realisation-caption span{font-size:14px;}
 .realisation-nav{left:10px;right:10px;}
-.realisation-nav a{width:42px;height:42px;font-size:22px;}
+.realisation-nav button{width:42px;height:42px;font-size:22px;}
 .realisation-note{display:block;}
 .realisation-note span{margin-top:6px;}
 .contact-actions{flex-direction:column;}
@@ -651,8 +651,8 @@ body{padding-bottom:76px;}
         </div>
 
         <div class="realisation-nav">
-          <a href="#realisation-1" aria-label="Première réalisation">‹</a>
-          <a href="#realisation-5" aria-label="Dernière réalisation">›</a>
+          <button type="button" onclick="prevRealisation()" aria-label="Réalisation précédente">‹</button>
+          <button type="button" onclick="nextRealisation()" aria-label="Réalisation suivante">›</button>
         </div>
       </div>
 
@@ -662,11 +662,6 @@ body{padding-bottom:76px;}
         <a href="#realisation-3" aria-label="Voir réalisation 3"></a>
         <a href="#realisation-4" aria-label="Voir réalisation 4"></a>
         <a href="#realisation-5" aria-label="Voir réalisation 5"></a>
-      </div>
-
-      <div class="realisation-note">
-        <span>Faites défiler la galerie horizontalement ou utilisez les points.</span>
-        <span>Images modifiables dans le dossier /images</span>
       </div>
     </div>
   </div>
@@ -963,6 +958,47 @@ function trackLead(action) {
     gtag('event', action);
   }
 }
+
+let currentRealisation = 0;
+
+function getRealisationTrack() {
+  return document.querySelector('.realisations-track');
+}
+
+function getRealisationSlides() {
+  return Array.from(document.querySelectorAll('.realisation-slide'));
+}
+
+function goToRealisation(index) {
+  const track = getRealisationTrack();
+  const slides = getRealisationSlides();
+  if (!track || !slides.length) return;
+
+  currentRealisation = (index + slides.length) % slides.length;
+  track.scrollTo({
+    left: slides[currentRealisation].offsetLeft,
+    behavior: 'smooth'
+  });
+}
+
+function nextRealisation() {
+  goToRealisation(currentRealisation + 1);
+}
+
+function prevRealisation() {
+  goToRealisation(currentRealisation - 1);
+}
+
+window.addEventListener('load', function() {
+  const track = getRealisationTrack();
+  const slides = getRealisationSlides();
+  if (!track || !slides.length) return;
+
+  track.addEventListener('scroll', function() {
+    const index = Math.round(track.scrollLeft / track.clientWidth);
+    currentRealisation = Math.max(0, Math.min(index, slides.length - 1));
+  });
+});
 
 function showMessage(event) {
   event.preventDefault();
