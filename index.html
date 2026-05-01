@@ -232,27 +232,29 @@ inset:0;
 position:absolute;
 inset:0;
 opacity:0;
-animation:heroSlide 24s infinite;
+animation:heroSlide 32s infinite;
 }
 .hero-slide:nth-child(1){animation-delay:0s;}
-.hero-slide:nth-child(2){animation-delay:6s;}
-.hero-slide:nth-child(3){animation-delay:12s;}
-.hero-slide:nth-child(4){animation-delay:18s;}
+.hero-slide:nth-child(2){animation-delay:8s;}
+.hero-slide:nth-child(3){animation-delay:16s;}
+.hero-slide:nth-child(4){animation-delay:24s;}
 .hero-slide img{
 width:100%;
 height:100%;
 object-fit:cover;
-filter:saturate(.95) contrast(1.05);
-transform:scale(1.04);
-animation:heroZoom 24s infinite;
+object-position:center center;
+filter:saturate(.96) contrast(1.02) brightness(.78);
 }
+.hero-slide:nth-child(2) img{object-position:center center;}
+.hero-slide:nth-child(3) img{object-position:center center;}
+.hero-slide:nth-child(4) img{object-position:center center;}
 .hero::after{
 content:"";
 position:absolute;
 inset:0;
 background:
-linear-gradient(90deg,rgba(7,27,51,.95) 0%,rgba(7,27,51,.74) 42%,rgba(7,27,51,.36) 100%),
-linear-gradient(180deg,rgba(7,27,51,.25) 0%,rgba(7,27,51,.88) 100%);
+linear-gradient(90deg,rgba(7,27,51,.92) 0%,rgba(7,27,51,.70) 43%,rgba(7,27,51,.34) 100%),
+linear-gradient(180deg,rgba(7,27,51,.22) 0%,rgba(7,27,51,.88) 100%);
 z-index:1;
 }
 .hero-inner{
@@ -297,15 +299,10 @@ background:var(--gold-2);
 
 @keyframes heroSlide{
 0%{opacity:0;}
-6%{opacity:1;}
-25%{opacity:1;}
-31%{opacity:0;}
+8%{opacity:1;}
+26%{opacity:1;}
+34%{opacity:0;}
 100%{opacity:0;}
-}
-@keyframes heroZoom{
-0%{transform:scale(1.04);}
-50%{transform:scale(1.10);}
-100%{transform:scale(1.04);}
 }
 
 .intro-card{
@@ -484,7 +481,7 @@ height:100%;
 object-fit:cover;
 transition:.55s ease;
 }
-.gallery-item:hover img{transform:scale(1.045);}
+.gallery-item:hover img{transform:scale(1.035);}
 .gallery-caption{
 position:absolute;
 left:18px;
@@ -498,30 +495,56 @@ padding:14px 16px;
 font-weight:800;
 }
 
-.areas{background:#fff;}
-.area-grid{
+.about-premium{
+background:#fff;
+}
+.about-grid{
 display:grid;
-grid-template-columns:.9fr 1.1fr;
+grid-template-columns:.85fr 1.15fr;
 gap:44px;
 align-items:center;
 }
-.area-box{
-background:var(--soft);
+.about-panel{
+background:linear-gradient(135deg,#f7f9fc 0%,#eef3f8 100%);
 border:1px solid var(--line);
-border-radius:30px;
-padding:34px;
+border-radius:34px;
+padding:38px;
+box-shadow:var(--shadow);
 }
-.area-box p{
+.about-panel p{
 color:var(--muted);
+font-size:17px;
 margin-top:14px;
 }
-.area-tags{
+.about-cards{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:16px;
+}
+.about-card{
+background:#fff;
+border:1px solid var(--line);
+border-radius:26px;
+padding:24px;
+box-shadow:var(--shadow);
+}
+.about-card strong{
+display:block;
+font-size:18px;
+color:var(--navy);
+margin-bottom:8px;
+}
+.about-card span{
+color:var(--muted);
+display:block;
+}
+.about-location{
+margin-top:18px;
 display:flex;
 gap:10px;
 flex-wrap:wrap;
-margin-top:24px;
 }
-.area-tags span{
+.about-location span{
 background:#fff;
 border:1px solid var(--line);
 border-radius:999px;
@@ -826,7 +849,7 @@ border:1px solid #cfe8ff;
 @media(max-width:1050px){
 .services-head,
 .signature-grid,
-.area-grid,
+.about-grid,
 .review-grid,
 .contact-grid,
 .intro-grid{
@@ -866,10 +889,11 @@ gap:14px;
 font-size:14px;
 }
 .intro-card{margin-top:-44px;}
-.intro-text,.intro-aside{padding:26px;}
+.intro-text,.intro-aside,.about-panel{padding:26px;}
 .services-grid,
 .faq-grid,
-.gallery{
+.gallery,
+.about-cards{
 grid-template-columns:1fr;
 }
 .gallery{grid-auto-rows:270px;}
@@ -917,7 +941,7 @@ scroll-behavior:auto!important;
       <a href="#prestations">Prestations</a>
       <a href="#approche">Approche</a>
       <a href="#realisations">Réalisations</a>
-      <a href="#avis">Avis</a>
+      <a href="#qui-sommes-nous">Qui sommes-nous</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -1129,26 +1153,49 @@ scroll-behavior:auto!important;
   </div>
 </section>
 
-<section class="section areas">
-  <div class="container area-grid">
-    <div>
-      <div class="eyebrow">Zone d’intervention</div>
-      <h2>Basé à Biguglia, intervention en Corse.</h2>
-    </div>
-
-    <div class="area-box">
+<section class="section about-premium" id="qui-sommes-nous">
+  <div class="container about-grid">
+    <div class="about-panel">
+      <div class="eyebrow">Qui sommes-nous</div>
+      <h2>Une entreprise d’électricité pensée pour le terrain.</h2>
       <p>
-        Intervention à Biguglia, Bastia, Lucciana, Borgo, Furiani
-        et plus largement dans toute la Corse selon la nature du chantier.
+        Basée à Biguglia, l’entreprise accompagne particuliers et professionnels avec une même exigence :
+        intervenir proprement, communiquer clairement et proposer des solutions fiables dans le temps.
+      </p>
+      <p>
+        L’intervention peut concerner une urgence électrique, une rénovation complète, une installation de climatisation,
+        une borne de recharge ou la sécurisation d’un logement ou d’un local professionnel.
       </p>
 
-      <div class="area-tags">
+      <div class="about-location">
         <span>Biguglia</span>
         <span>Bastia</span>
         <span>Lucciana</span>
         <span>Borgo</span>
         <span>Furiani</span>
-        <span>Corse</span>
+        <span>Toute la Corse</span>
+      </div>
+    </div>
+
+    <div class="about-cards">
+      <div class="about-card">
+        <strong>Particuliers</strong>
+        <span>Logements, villas, appartements, rénovations, dépannage et confort électrique.</span>
+      </div>
+
+      <div class="about-card">
+        <strong>Professionnels</strong>
+        <span>Commerces, bureaux, locaux, sécurité, accès, installations techniques.</span>
+      </div>
+
+      <div class="about-card">
+        <strong>Finitions</strong>
+        <span>Un travail pensé pour être propre, organisé et visuellement rassurant.</span>
+      </div>
+
+      <div class="about-card">
+        <strong>Corse</strong>
+        <span>Intervention à Biguglia, Bastia et plus largement dans toute la Corse selon le chantier.</span>
       </div>
     </div>
   </div>
@@ -1367,6 +1414,7 @@ scroll-behavior:auto!important;
           <a href="#prestations">Prestations</a>
           <a href="#approche">Approche</a>
           <a href="#realisations">Réalisations</a>
+          <a href="#qui-sommes-nous">Qui sommes-nous</a>
           <a href="#avis">Avis</a>
           <a href="#contact">Contact</a>
           <a href="mentions-legales.html">Mentions légales</a>
