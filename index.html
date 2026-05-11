@@ -10,8 +10,6 @@
 <meta name="author" content="AE ELEC" />
 <meta name="theme-color" content="#05070b" />
 <link rel="canonical" href="https://aeelec.netlify.app/" />
-<link rel="icon" type="image/jpeg" href="./images/logo.jpeg" />
-<link rel="apple-touch-icon" href="./images/logo.jpeg" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -272,31 +270,11 @@ transition:.28s ease;
 .gallery-head{display:flex;justify-content:space-between;gap:30px;align-items:end;}
 .gallery-head p{max-width:560px;font-size:17px;color:var(--muted-dark);}
 .realisations-shell{margin-top:34px;background:linear-gradient(135deg,#fff 0%,#eee8dc 100%);border:1px solid rgba(0,0,0,.06);border-radius:36px;padding:24px;box-shadow:var(--shadow-soft);}
-.realisations-slider{
-position:relative;
-overflow:hidden;
-border-radius:28px;
-background:#080b10;
-max-width:520px;
-margin:0 auto;
-}
+.realisations-slider{position:relative;overflow:hidden;border-radius:28px;background:#080b10;}
 .realisations-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;gap:0;border-radius:28px;-ms-overflow-style:none;scrollbar-width:none;}
 .realisations-track::-webkit-scrollbar{display:none;}
-.realisation-slide{
-min-width:100%;
-height:620px;
-position:relative;
-scroll-snap-align:start;
-background:#080b10;
-overflow:hidden;
-}
-.realisation-slide img{
-width:100%;
-height:100%;
-object-fit:cover !important;
-object-position:center center;
-display:block;
-}
+.realisation-slide{min-width:100%;height:620px;position:relative;scroll-snap-align:start;background:#080b10;}
+.realisation-slide img{width:100%;height:100%;object-fit:contain;object-position:center center;background:#080b10;}
 .realisation-slide::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(0,0,0,.82) 100%);pointer-events:none;}
 .realisation-caption{position:absolute;left:24px;right:24px;bottom:24px;z-index:2;display:flex;justify-content:space-between;gap:18px;align-items:end;}
 .realisation-caption strong{display:block;font-size:28px;line-height:1.08;letter-spacing:-.055em;color:#fff;font-weight:900;}
@@ -409,7 +387,7 @@ h1{font-size:clamp(38px,12vw,54px);letter-spacing:-.055em;}
 .gallery-head p{margin-top:14px;}
 .realisations-shell{padding:12px;border-radius:26px;}
 .realisations-slider{border-radius:22px;}
-.realisation-slide{height:380px;}
+.realisation-slide{height:430px;}
 .realisation-caption{left:14px;right:14px;bottom:14px;display:block;}
 .realisation-caption strong{font-size:22px;}
 .realisation-caption span{font-size:14px;}
@@ -613,7 +591,7 @@ body{padding-bottom:76px;}
         <h2>Quelques interventions réalisées.</h2>
       </div>
       <p>
-        Une galerie immersive pour visualiser les réalisations, les finitions
+        Une galerie plus immersive pour visualiser les réalisations, les finitions
         et le soin apporté aux installations.
       </p>
     </div>
@@ -621,51 +599,55 @@ body{padding-bottom:76px;}
     <div class="realisations-shell">
       <div class="realisations-slider">
         <div class="realisations-track">
-
           <div class="realisation-slide" id="realisation-1">
-            <img src="./images/1.jpeg" alt="Réalisation électrique AE ELEC en Corse">
+            <img src="./images/tableau-electrique-propre.jpeg" alt="Tableau électrique propre réalisé par AE ELEC">
+            <div class="realisation-caption">
+              <div>
+                <strong>Tableau électrique organisé</strong>
+                <span>Travail propre, câblage lisible et installation soignée.</span>
+              </div>
+            </div>
           </div>
 
           <div class="realisation-slide" id="realisation-2">
-            <img src="./images/2.jpeg" alt="Éclairage extérieur réalisé par AE ELEC">
+            <img src="./images/eclairage-exterieur-villa.jpeg" alt="Éclairage extérieur de villa en Corse">
+            <div class="realisation-caption">
+              <div>
+                <strong>Éclairage extérieur</strong>
+                <span>Mise en lumière d’un espace extérieur avec rendu moderne.</span>
+              </div>
+            </div>
           </div>
 
           <div class="realisation-slide" id="realisation-3">
-            <img src="./images/3.jpeg" alt="Installation électrique extérieure en Corse">
+            <img src="./images/mise-en-valeur-maison-nuit.jpeg" alt="Mise en valeur lumineuse de maison de nuit en Corse">
+            <div class="realisation-caption">
+              <div>
+                <strong>Mise en valeur de nuit</strong>
+                <span>Éclairage architectural sobre et élégant.</span>
+              </div>
+            </div>
           </div>
 
           <div class="realisation-slide" id="realisation-4">
-            <img src="./images/4.jpeg" alt="Mise en lumière extérieure AE ELEC">
+            <img src="./images/eclairage-entree-maison.jpeg" alt="Éclairage entrée de maison">
+            <div class="realisation-caption">
+              <div>
+                <strong>Éclairage entrée</strong>
+                <span>Entrée sécurisée, propre et visuellement maîtrisée.</span>
+              </div>
+            </div>
           </div>
 
           <div class="realisation-slide" id="realisation-5">
-            <img src="./images/5.jpeg" alt="Chantier électrique AE ELEC">
+            <img src="./images/eclairage-facade-maison.jpeg" alt="Éclairage façade maison">
+            <div class="realisation-caption">
+              <div>
+                <strong>Éclairage façade</strong>
+                <span>Finition extérieure pensée pour le confort et l’esthétique.</span>
+              </div>
+            </div>
           </div>
-
-          <div class="realisation-slide" id="realisation-6">
-            <img src="./images/6.jpeg" alt="Réalisation éclairage intérieur AE ELEC">
-          </div>
-
-          <div class="realisation-slide" id="realisation-7">
-            <img src="./images/7.jpeg" alt="Luminaire et installation intérieure">
-          </div>
-
-          <div class="realisation-slide" id="realisation-8">
-            <img src="./images/8.jpeg" alt="Installation électrique professionnelle">
-          </div>
-
-          <div class="realisation-slide" id="realisation-9">
-            <img src="./images/9.jpeg" alt="Éclairage commerce AE ELEC">
-          </div>
-
-          <div class="realisation-slide" id="realisation-10">
-            <img src="./images/10.jpeg" alt="Tableau électrique réalisé par AE ELEC">
-          </div>
-
-          <div class="realisation-slide" id="realisation-11">
-            <img src="./images/11.jpeg" alt="Tableau électrique professionnel AE ELEC">
-          </div>
-
         </div>
 
         <div class="realisation-nav">
@@ -680,12 +662,6 @@ body{padding-bottom:76px;}
         <a href="#realisation-3" aria-label="Voir réalisation 3"></a>
         <a href="#realisation-4" aria-label="Voir réalisation 4"></a>
         <a href="#realisation-5" aria-label="Voir réalisation 5"></a>
-        <a href="#realisation-6" aria-label="Voir réalisation 6"></a>
-        <a href="#realisation-7" aria-label="Voir réalisation 7"></a>
-        <a href="#realisation-8" aria-label="Voir réalisation 8"></a>
-        <a href="#realisation-9" aria-label="Voir réalisation 9"></a>
-        <a href="#realisation-10" aria-label="Voir réalisation 10"></a>
-        <a href="#realisation-11" aria-label="Voir réalisation 11"></a>
       </div>
     </div>
   </div>
@@ -853,7 +829,7 @@ body{padding-bottom:76px;}
 
         <div class="map-wrap">
           <iframe
-            src="https://www.google.com/maps?q=42.5989636,9.4463115&z=19&output=embed"
+            src="https://www.google.com/maps?q=ZI+de+Tragone+20620+Biguglia&output=embed"
             width="100%"
             height="260"
             style="border:0;"
